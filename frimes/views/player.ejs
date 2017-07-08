@@ -334,32 +334,24 @@ console.log(mass)
 var index={ 
 	location:function(){
 		window.location.hash=index.season+'s'+index.serie;
-		
 	},
 	setSerie:function(){
+    var serial= Cookies.get('serial');   
 	var	season=Cookies.get('season');
 	var	serie=Cookies.get('serie');	
 		var hash=window.location.hash;
-
+        console.log('length: ',hash.length)
 		if(hash.length!=0){
 			var hashMass=	hash.substring(1).split('s');
-			timeSet=hashMass[1]==serie&&hashMass[0]==season?Cookies.get('time'):0;
-			
-
+			timeSet=hashMass[1]==serie&&serial==mass.id&&hashMass[0]==season?Cookies.get('time'):0;
 this.serie=hashMass[1];
 this.season=hashMass[0];			
 		}else{
-			console.log('it is cookies')
-			
-
-
-	if(season!=undefined&&serie!=undefined){
-		console.log('cookies defined')
+	if(season!=undefined&&serie!=undefined&&serial==mass.id){  
 this.serie=serie;
 this.season=season;	
 		timeSet=Cookies.get('time');
 	}else{
-			console.log('cookies undefined')
 this.serie=1;
 this.season=1;
 	
@@ -399,7 +391,7 @@ this.season=1;
 											} 
 
 		} 
-console.log(mass)
+
 
 
   
@@ -562,6 +554,7 @@ $(window).on('unload',function(){
 	Cookies.set('time',videoTag.get(0).currentTime);
 	Cookies.set('serie',index.serie);
 	Cookies.set('season',index.season);
+    Cookies.set('serial',mass.id);
 })
 
 
@@ -778,7 +771,7 @@ $scope.startNewVideo=function(serie,season){
 $scope.selectSerieUp=serie; 
  $scope.selectSeasonUp =season
 index.season=season; 
-index.serie=serie; 
+index.serie=serie;
 	index.location();
 video.get(index.getFilePath(),index.getData('token'),true) 
 video.play(videoTag.get(0),false) 
@@ -1082,7 +1075,7 @@ $(elem).on('mousedown',function(e){
     
     
 }})
-index.location()
+
 
  video.get(index.getFilePath(),index.getData('token'),true) 
 
@@ -1097,6 +1090,7 @@ return false}
 index.time=index.getData('time') 
 
 		 index.setSerie() 
+        index.location()
 $('div#description').html(mass.db.text) 
 $("#imgDes").attr('src',mass.info.imgDes) 
 $("#imgMob").attr('src',mass.info.imgMob) 
