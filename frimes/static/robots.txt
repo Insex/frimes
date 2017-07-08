@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /ajax
+Disallow: /css
+Disallow: /img
+Disallow: /js
+Disallow: /bootstrap
+Disallow: /fonts
+Disallow: /hot
+Disallow: /categories
+Disallow: /standup
+Host: frimes.ru

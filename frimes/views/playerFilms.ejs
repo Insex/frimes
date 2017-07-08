@@ -1,0 +1,306 @@
+<!DOCTYPE>
+<html lang="ru" ng-app="seriesApp" ng-controller="seriesCtrl"  >
+  <head>
+      <script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/angular.min.js"></script>
+	<script src="js/mousestop.js"></script>
+	<script src="js/js.cookie.js"></script>
+	<script src="js/jquery.fullscreen-min.js"></script>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Смотреть фильм <%-name%></title>
+	  <meta charset="utf-8">
+	  <link href="css/mainCss.css" rel="stylesheet"> 
+ <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+<meta Name="Publisher-Email" Content="600amper@gmail.com">	
+<meta Name="revisit-after" Content="2 days">	  
+<meta property="og:title" content="<%-name%>" />	
+<meta name="description" content="<%-description%>">
+<meta name="Keywords" content="смотреть,фильмы,<%-name%>,бесплатно,без рекламы,frimes.ru,frimes">    
+<!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter42920644 = new Ya.Metrika({ id:42920644, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true, ut:"noindex", ecommerce:"dataLayer" }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <!-- /Yandex.Metrika counter -->
+    
+    
+    
+    </head>
+	
+
+	
+	
+<body style="background-color:#F2F2F2;font-family:roboto;padding:0">
+<div style="display:none">
+
+<h1>фильмы смотреть  <%-name%></h1>    
+<h2><%-year%></h2>    
+
+</div>  
+<div class="menuBlock touch"></div>
+	<div  id="menu"  class="menu visible-xs hidden-sm hidden-md hidden-lg">
+	
+		<div class="menuScroll">
+
+		<a href="/"><div class="  menuText" style="/*margin-top:10%;*/">
+		<span class="menuSpan">Сериалы</span>
+			
+		</div>
+            
+        </a>
+            <hr >
+		<a href="/films"><div class="  menuText" >
+		<span class="menuSpan">Фильмы</span>
+			
+        </div></a>
+        <hr >    
+		<a href="/standup"><div class="  menuText" >
+		<span class="menuSpan">Стендапы</span>
+		
+        </div>
+        	    
+            </a>
+            <hr >
+		<a href="/categories"><div class="  menuText" >
+		<span class="menuSpan">Категориям</span>
+			
+				
+        </div></a>
+        <hr >    
+        <a href="/hot"><div class="  menuText" >
+                    
+		<span class="menuSpan"><img style="margin-bottom:4.12px;margin-right:1%;" src="img/hot.svg">Новинки</span>
+			
+				
+		</div>  </a> <hr> 
+		</div>
+	</div>
+	
+ <div class="container-fluid"  >
+	
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs  head" style="padding:0px;width:100%;">
+			<div class="lgMd col-lg-10 col-lg-offset-1 col-sm-12  col-md-10  col-md-offset-1  hidden-xs" style="white-space:nowrap;height:100%;padding-left:4vw;height:100%;padding-right:4vw" >
+			
+	
+					<a href="/">	<div class="  center logo-lg" style="display:inline-block;width:15%;"> 
+							Frimes
+                        </div></a>
+
+				<div class=" head-color" style="vertical-align:top;display:inline-block;padding-right:0px;width:85%;">	
+
+                <a href="/">
+					<div  class="frameWidth mouse" id="animateDad" >
+						<div class="padding" >
+							<div class="center">Сериалы</div>
+						</div>
+						<div id="animateBaby" class="animate" >
+						</div>	
+					</div>	
+                </a>      
+
+                <a href="/films">
+					<div  class="frameWidth mouse" id="animateDad" >
+						<div class="padding" >
+							<div class="center">Фильмы</div>
+						</div>
+						<div id="animateBaby" class="animate" >
+						</div>	
+					</div>	
+                </a>    
+    
+            <a href="/standup">        
+					<div  class="frameWidth mouse" id="animateDad" >
+						<div class="padding" >
+							<div class="center">Стендапы</div>
+						</div>
+						<div id="animateBaby" class="animate" >
+						</div>	
+					</div>
+            </a>    
+            <a href="/categories">         
+							<div  class="frameWidth mouse" id="animateDad" >
+						<div class="padding" >
+							<div class="center">Поиск по категориям</div>
+						</div>
+						<div id="animateBaby" class="animate" >
+						</div>	
+					</div>	
+            </a>    
+            <a href="/hot">           
+							<div style="float:right" class="frameWidth mouse" id="animateDad" >
+						<div class="padding" >
+							<div class="center"><img style="margin-bottom:4%" src="img/hot.svg"> Новинки</div>
+						</div>
+						<div id="animateBaby" class="animate" >
+						</div>	
+					</div>	
+            </a> 
+				</div>			
+			</div>
+		  </div>					
+			
+			<span style="padding-left:4vw;padding-right:4vw" class="touch col-xs-12 head hidden-lg hidden-md hidden-sm ">
+			<div style="height:100%;text-align: center;" class="logo-sm" >
+			
+						<a href="/"><span style="display:inline-block;vertical-align:middle;">Frimes</span></a>
+						
+				</div>
+			<img id="buttonOut" class=" height-sm-xs " src="img/menu.svg " >
+			</span>
+				
+			
+	 	
+	 </div> 
+	 <div  class="row">
+		<div style="padding-left:4vw;height:auto;padding-right:4vw" class="col-lg-10 col-lg-offset-1 col-sm-12 col-md-10 col-md-offset-1 col-xs-12">
+		
+<div class="fullScreen margin" style="position:relative;width:100%" id="fullScreen">
+	<iframe allowfullscreen="" width="640" height="500" controls style="background-color:black;width:100%;height:48vw;vertical-align:middle;display:inline-block" id="video" src="" >
+			
+			
+	</iframe>
+
+			</div>
+			<div class="margin" style="padding-bottom:2.1%;display:table;width:100%;background-color:white;width:100%;">
+					
+						
+						<div id="descriptionName" class="descriptionName descriptMargin" style=""></div>	
+						
+						
+						<img id="img" src="" style="" class="centerImg">
+
+						<!--<img id="imgMob" src="" style="margin-bottom:2%;width:100%;padding-right:3%;padding-left:3%;" class=" visible-xs ">-->
+			 			<div id="description" class="description" >
+
+
+		
+						</div>
+		    </div>
+		
+			<div class="margin col-lg-12 col-md-12  col-xs-12 col-sm-12 lastBlock blockHeight" style="">
+				
+				
+					<div id="leftButton" style="" class="button col-lg-1  col-sm-1 col-md-1  col-xs-1 mouse " >
+				<img  src="img/leftArrow.svg" style="width:40%;margin-left:25%;">
+				</div>
+					<div style="height:auto;margin-bottom:1vw; "class="col-lg-10  col-sm-10 col-md-10  col-xs-12">
+						<div style="cursor:default;width:100%;font-size:24px;color:#e55a4c;padding:2%" class="center">Рекомендуем для просмотра</div>
+						
+						
+						<div class="scroll imgFrames" id="scroll" style="">
+							<div style="position:relative;">
+						<div id="imgFrame" class="imgSize repeat"  ng-repeat="frame in recommendation" style="left:{{($index*procent)+'%'}}" animate="{{$index}}" ><a href="/player?films={{frame.name}}">
+							<div style="width:100%" class="">
+								<div id="playButton" class="playButton" style="text-align:center;position:relative;">
+									<div id="recommendation" style="z-index:2">
+									</div>
+									<svg id="button" viewBox="0 0 86 100" class="svg" >
+ 									<polygon  points="0,0 0,100 86,50"/>
+									</svg>
+									<img class="botImg" align="middle" src="{{frame.img}}">
+								</div>	
+							</div>
+							<div style="" class="bot-text" >{{frame.name}}</div>	
+						
+					</a>
+						</div>
+
+					 </div>
+					</div>		
+					</div>
+				<div id="rightButton"  class="button col-lg-1 mouse  col-sm-1 col-md-1  col-xs-1" >
+				
+				<img  src="img/rightArrow.svg"  style="margin-left:20%;width:40%">
+				
+				</div>
+			</div>	
+
+
+			
+
+	  </div> 
+ </div>
+
+    </div>
+    
+
+		<script src="js/frontEnd.js"></script>
+
+	  <script>
+		'use strict'
+
+
+
+
+var mass=JSON.parse('<%-body%>'); 
+console.log(mass)
+ $('div#description').html(mass.text)
+$("#img").attr('src',mass.img) 
+$("#video").attr('src',mass.video) 
+angular.module("seriesApp",[]).controller("seriesCtrl",function($scope,$rootScope){ 
+   $scope.procent=25.6;
+$scope.recommendation=JSON.parse('<%-frame%>'
+                                );
+$scope.recommendation.forEach(function(item,i,arr){
+		if(i==0){
+		item.limitation=0
+			
+		}
+				else if(i==arr.length-1){
+		item.limitation=+(3*$scope.procent).toFixed(3)	
+
+		}
+    item.left=+(i*$scope.procent).toFixed(3);
+    
+
+})  
+console.log($scope.recommendation)
+}).directive('animate',function (){
+		return function($scope,elem,attrs){
+		
+			function animate(sign){
+				return function(){
+                
+		var summ=+($scope.recommendation[attrs.animate].left+(sign*$scope.procent)).toFixed(3);
+		$scope.$apply(function(){		
+             
+		if($scope.recommendation[0].left==$scope.recommendation[0].limitation&&sign==1){
+		return}
+
+                var length=$scope.recommendation.length-1;   
+            console.log('1left:'+$scope.recommendation[length].left)	
+                 console.log('1limit:'+$scope.recommendation[length].limitation)	
+if($scope.recommendation[length].left==$scope.recommendation[length].limitation&&sign==-1)
+		{return}
+				
+setTimeout(function(){$(elem).animate({left:summ+'%'},{duration:500,easeing:"easein"})
+$scope.recommendation[attrs.animate].left=summ},0)
+
+					})
+				}
+				
+			}
+				
+			$scope.recommendation[attrs.animate];
+			$('#rightButton').on('click',animate(-1))
+			
+			
+	$('#leftButton').on('click',animate(1))
+}})
+
+
+	  </script>
+		<div class=" col-xs-12 col-md-12 col-sm-12 col-lg-12 footer" >
+         <div class="colorFooter" ><span >Frimes.ru</span> - все ваши любимые фильмы и сериалы здесь</div>
+<div  class="margin col-xs-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-offset-1 col-xs-10 col-md-10 col-sm-10 col-lg-10">
+    
+<h5>
+Frimes- это новый онлайн кинотеатр бесплатного пользования. Вам больше не нужно ждать телепремьер или стоять тысячные очереди в кино. 
+Теперь, чтобы посмотреть любимую новинку, Вам достаточно совершить несколько кликов и удобно расположиться на диване. 
+На нашем сервисе, Вы можете найти: сотни фильмов, сериалов, комедийных шоу в жанре стендап в хорошем качестве. Большой выбор и разнообразие жанров не оставит никого равнодушным. 
+Каждый сможет найти для себя множество любимых фильмов или, схожих с Вашими вкусами, сериалов. Нет никаких органический, выбирайте, что Вы хотите. 
+Провести тёплый семейный вечер за просмотром отличного кино? Посмотреть все сезоны сериала в режиме марафона с друзьями? Всё это, и многое другое, вам поможет осуществить Frimes. 
+Наш дизайн и техническая начинка- полностью авторская разработка. Поэтому, у нас Вы не найдёте назойливой рекламы или платных показов, а наш простой и удобный интерфейс не предоставит вам неудобств.
+            </h5> </div>            
+         </div>
+</body>
+</html>
+

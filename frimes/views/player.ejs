@@ -1,0 +1,1107 @@
+<!DOCTYPE>
+<html lang="ru" ng-app="seriesApp" ng-controller="seriesCtrl"  >
+  <head>
+      <script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/angular.min.js"></script>
+	<script src="js/mousestop.js"></script>
+	<script src="js/js.cookie.js"></script>
+	<script src="js/jquery.fullscreen-min.js"></script>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta property="og:title" content="<%-name%>" />
+ <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		 
+    <title>Смотреть сериал <%-name%></title>
+<meta name="Keywords" content="смотреть,сериал,<%-name%>,бесплатно,без рекламы,frimes.ru,frimes">    
+	  <meta charset="utf-8">
+      <meta name="description" content="<%-description%> "> 
+	  <link href="css/mainCss.css" rel="stylesheet"> 
+ <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<style>
+	  </style>
+<script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter42920644 = new Ya.Metrika({ id:42920644, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true, ut:"noindex", ecommerce:"dataLayer" }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> 
+	
+	  
+	
+	</head>
+	
+
+	
+	
+<body style="background-color:#F2F2F2;font-family:roboto;padding:0">
+<div style="display:none">
+<h1>Смотреть бесплатно <%-name%></h1>    
+<h2><%-year%></h2>    
+    </div>      
+<div class="menuBlock touch"></div>
+	<div  id="menu"  class="menu visible-xs hidden-sm hidden-md hidden-lg">
+	
+		<div class="menuScroll">
+
+		<a href="/"><div class="  menuText" style="/*margin-top:10%;*/">
+		<span class="menuSpan">Сериалы</span>
+			
+		</div>
+            
+        </a>
+            <hr >
+		<a href="/films"><div class="  menuText" >
+		<span class="menuSpan">Фильмы</span>
+			
+        </div></a>
+        <hr >    
+		<a href="/standup"><div class="  menuText" >
+		<span class="menuSpan">Стендапы</span>
+		
+        </div>
+        	    
+            </a>
+            <hr >
+		<a href="/categories"><div class="  menuText" >
+		<span class="menuSpan">Категориям</span>
+			
+				
+        </div></a>
+        <hr >    
+        <a href="/hot"><div class="  menuText" >
+                    
+		<span class="menuSpan"><img style="margin-bottom:4.12px;margin-right:1%;" src="img/hot.svg">Новинки</span>
+			
+				
+		</div>  </a> <hr> 
+		</div>
+	</div>
+	
+ <div class="container-fluid"  >
+	
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs  head" style="padding:0px;width:100%;">
+			<div class="lgMd col-lg-10 col-lg-offset-1 col-sm-12  col-md-10  col-md-offset-1  hidden-xs" style="white-space:nowrap;height:100%;padding-left:4vw;height:100%;padding-right:4vw" >
+			
+	
+					<a href="/">	<div class="  center logo-lg" style="display:inline-block;width:15%;"> 
+							Frimes
+                        </div></a>
+
+				<div class=" head-color" style="position:relative;height:100%;vertical-align:top;display:inline-block;padding-right:0px;width:85%;">	
+
+                <a href="/">
+					<div  class="frameWidth mouse" id="animateDad" >
+						<div class="padding" >
+							<div class="center">Сериалы</div>
+						</div>
+						<div id="animateBaby" class="animate" >
+						</div>	
+					</div>	
+                </a>      
+
+                <a href="/films">
+					<div  class="frameWidth mouse" id="animateDad" >
+						<div class="padding" >
+							<div class="center">Фильмы</div>
+						</div>
+						<div id="animateBaby" class="animate" >
+						</div>	
+					</div>	
+                </a>    
+    
+            <a href="/standup">        
+					<div  class="frameWidth mouse" id="animateDad" >
+						<div class="padding" >
+							<div class="center">Стендапы</div>
+						</div>
+						<div id="animateBaby" class="animate" >
+						</div>	
+					</div>
+            </a>    
+            <a href="/categories">         
+							<div  class="frameWidth mouse" id="animateDad" >
+						<div class="padding" >
+							<div class="center">Поиск по категориям</div>
+						</div>
+						<div id="animateBaby" class="animate" >
+						</div>	
+					</div>	
+            </a>    
+            <a href="/hot">           
+							<div style="float:right" class="frameWidth mouse" id="animateDad" >
+						<div class="padding" >
+							<div class="center"><img style="margin-bottom:4%" src="img/hot.svg"> Новинки</div>
+						</div>
+						<div id="animateBaby" class="animate" >
+						</div>	
+					</div>	
+            </a> 
+				</div>			
+			</div>
+		  </div>					
+			
+			<span style="padding-left:4vw;padding-right:4vw" class="touch col-xs-12 head hidden-lg hidden-md hidden-sm ">
+			<div style="height:100%;text-align: center;" class="logo-sm" >
+			
+						<a href="/"><span style="display:inline-block;vertical-align:middle;">Frimes</span></a>
+						
+				</div>
+			<img id="buttonOut" class=" height-sm-xs " src="img/menu.svg " >
+			</span>
+				
+			
+	 	
+	 </div> 
+	 <div  class="row">
+		<div style="padding-left:4vw;height:auto;padding-right:4vw" class="col-lg-10 col-lg-offset-1 col-sm-12 col-md-10 col-md-offset-1 col-xs-12">
+			<div style="">
+                
+<div class="fullScreen margin" style="position:relative;width:100%" id="fullScreen">
+    
+	<video type="video/mp4" video-events  style="height:41.96vw;background-color:black;width:100%;vertical-align:middle;display:inline-block" id="video" src="" >
+			
+			
+	</video>
+	<span id="tool" tool style="position:absolute;top:84%;">
+	<span id="text" style=" 
+  margin-top:-10px;
+   background-color:black;color:white;border-radius:5px;padding-right:13.2%;padding-left:13.2%;padding-top:0.1%;padding-bottom:0.1%;font-size:1.5rem"></span>
+
+	</span>
+	<img id="bigPlay" class=" mobile hidden-xs hidden-sm" src="img/bigPlay.png" style="cursor:pointer;width:11.25%;position:absolute;top:40%;left:44.37%;"/>
+    <img id="load" class=" mobile hidden-xs hidden-sm" autoplay loop src="img/load.gif" style="display:none;height:20%;width:11.25%;position:absolute;top:40%;left:44.37%;"/>
+	<div  id="" class="stripe mobile" style="font-size:1.3vw;color:white;position:absolute;top:5%;left:4%;height:auto;width:auto;">
+	Сезон {{selectSeasonUp}} Серия {{selectSerieUp}} {{screenWindow.controls}}
+	</div>
+<div  id="stripe" class=" mobile" style="position:absolute;top:90.5%;width:100%;height:7%;">
+
+	<div  id="play" class="play mouse">
+	<img src="img/playIcon.svg"  
+id="imgPlay" >
+	</div>
+	
+	<div class="text" style="">
+		<span  id="timeText" >
+<span id="1">00</span><span>:</span><span id="2">00</span><span>/</span><span id="3">00</span><span>:</span><span id="4">00</span>
+		</span>
+	</div>
+	<div id="timeStripe" class="timeStripe" style="">
+		
+	
+		
+		<svg class="svgStripe" style="z-index:2;opacity:0.5;width:100%;" viewBox="0 0 200 10"  preserveAspectRatio="none" id="svgGray"><rect x="0" y="0" width="200" height="10" fill="#9b9999"></rect></svg>
+	
+	<svg class="svgStripe" id="stripeThumb" style="z-index:3;box-shadow:0px 0px 10px 1px  #f84460;width:0%;" viewBox="0 0 200 10" preserveAspectRatio="none" id="svgRed"><rect x="0" y="0" width="200" height="10" fill="#f84460"></rect></svg>
+
+	<svg class="svgStripe" id="bufferStripe" style="z-index:1;width:0px;" viewBox="0 0 200 10" preserveAspectRatio="none" id="svgRed"><rect x="0" y="0" width="200" height="10" fill="#8b8888"></rect></svg>
+	</div>
+        <div class="soundRegulator animSound" sound-regulation>
+    	<div class="stripeRegulator"><svg class="stripe" id="redStripe" style="height:100%;z-index:3;box-shadow:0px 0px 10px 1px  #f84460;" viewBox="0 0 200 10" preserveAspectRatio="none" id="svgRed"><rect x="0" y="0" width="200" height="10" fill="#f84460"></rect></svg>
+    		<svg class="stripe" style="z-index:2;opacity:0.5;" viewBox="0 0 200 10"  preserveAspectRatio="none" id="svgGray"><rect x="0" y="0" width="200" height="10" fill="#9b9999"></rect></svg>    </div>    
+    
+    </div>  
+<div class="sound animSound" style="">
+	<img 
+id="sound" src="img/soundIcon.svg" class="zs mouse animSound" change-img="sound" style="
+                   margin-left:0%;width:35%" >
+
+	<img src="img/zoomOut.svg" class="zs mouse" change-img="zoom" id="increase" style="left:70%;width:31%;">
+	</div>			</div>
+			</div></div>
+
+			
+				<div class="margin selectList">
+			
+					<ul style="	text-align: left;" class="uList center">
+        
+
+                               
+<li ng-class="changeCss(season)"  style="padding-left:42px;padding-right:42px;	margin:0px;" class="selectLi " ng-click="changeSerie(season)"
+ 								ng-repeat="season in createSelectSeason(mass.db.time) ">
+								{{season}} Сезон
+							</li>
+
+					
+					</ul>
+					<hr style="margin-top:0px;margin-bottom:10px;margin-left:0px;margin-right:0px;" width="80%" height="1px">
+					<ul class="uList  center">
+							<li class="selectLi  center" ng-click="startNewVideo(serie,changeSeason)" 
+							ng-repeat="serie in createSelectSerie(mass.db.time[changeSeason]) ">
+	
+                                <span ng-class="changeGradient(serie)" class=" liSerie" >{{serie}} Серия</span>
+							</li>
+					</ul>				
+				</div>
+			
+			
+			
+			
+			
+
+			
+			<div class="margin" style="padding-bottom:2.1%;display:table;width:100%;background-color:white;width:100%;">
+					
+						
+						<div id="descriptionName" class="descriptionName descriptMargin" style=""></div>	
+						
+						
+						<img id="imgDes" src="" style="margin-right:3%;margin-top:2.1%;float:left;padding-left:2%;padding-right:0px;" class="centerImg hidden-xs">
+
+						<img id="imgMob" src="" style="margin-bottom:2%;width:100%;padding-right:3%;padding-left:3%;" class=" visible-xs ">
+						
+						
+						
+			 			<div id="description" class="description" style="">
+				
+		
+						</div>
+		
+
+					
+		    </div>
+		
+			<div class="margin col-lg-12 col-md-12  col-xs-12 col-sm-12 lastBlock blockHeight" style="">
+				
+				
+					<div id="leftButton" style="" class="button col-lg-1  col-sm-1 col-md-1  col-xs-1 mouse " >
+				<img  src="img/leftArrow.svg" style="width:40%;margin-left:25%;">
+				</div>
+					<div style="height:auto;margin-bottom:1vw; "class="col-lg-10  col-sm-10 col-md-10  col-xs-12">
+						<div style="cursor:default;width:100%;font-size:24px;color:#e55a4c;padding:2%" class="center">Рекомендуем для просмотра</div>
+						
+						
+						<div class="scroll imgFrames" id="scroll" style="">
+							<div style="position:relative;">
+						<div id="imgFrame" class="imgSize repeat"  ng-repeat="frame in recommendation" style="left:{{($index*procent)+'%'}}" animate="{{$index}}" >
+                            <a href="/player?series={{frame.id}}">
+							<div style="width:100%" class="">
+								<div id="playButton" class="playButton" style="text-align:center;position:relative;">
+									<div id="recommendation" style="z-index:2">
+									</div>
+									<svg id="button" viewBox="0 0 86 100" class="svg" >
+ 									<polygon  points="0,0 0,100 86,50"/>
+									</svg>
+									<img class="botImg" style="width:100%;z-index:1" align="middle" src="{{frame.info.imgDes}}">
+								</div>	
+							</div>
+							<div style="" class="bot-text" >{{frame.name}}</div>	
+						</a>
+					
+						</div>
+
+					 </div>
+					</div>		
+					</div>
+				<div id="rightButton"  class="button col-lg-1 mouse  col-sm-1 col-md-1  col-xs-1" >
+				
+				<img  src="img/rightArrow.svg"  style="margin-left:20%;width:40%">
+				
+				</div>
+			</div>	
+
+
+			
+	  	</div>
+		<div class=" col-xs-12 col-md-12 col-sm-12 col-lg-12 footer" >
+         <div class="colorFooter" ><span >Frimes.ru</span> - все ваши любимые фильмы и сериалы здесь</div>
+<div  class="margin col-xs-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-offset-1 col-xs-10 col-md-10 col-sm-10 col-lg-10">
+<h5>
+Frimes- это новый онлайн кинотеатр бесплатного пользования. Вам больше не нужно ждать телепремьер или стоять тысячные очереди в кино. 
+Теперь, чтобы посмотреть любимую новинку, Вам достаточно совершить несколько кликов и удобно расположиться на диване. 
+На нашем сервисе, Вы можете найти: сотни фильмов, сериалов, комедийных шоу в жанре стендап в хорошем качестве. Большой выбор и разнообразие жанров не оставит никого равнодушным. 
+Каждый сможет найти для себя множество любимых фильмов или, схожих с Вашими вкусами, сериалов. Нет никаких органический, выбирайте, что Вы хотите. 
+Провести тёплый семейный вечер за просмотром отличного кино? Посмотреть все сезоны сериала в режиме марафона с друзьями? Всё это, и многое другое, вам поможет осуществить Frimes. 
+Наш дизайн и техническая начинка- полностью авторская разработка. Поэтому, у нас Вы не найдёте назойливой рекламы или платных показов, а наш простой и удобный интерфейс не предоставит вам неудобств.
+            </h5>
+            </div>            
+         </div>
+	  </div> 
+ </div>
+
+	
+    
+
+		<script src="js/frontEnd.js"></script>
+
+	  <script>
+		'use strict'
+	window.checkFullScreen=false;
+var videoTag=$('#video'),
+    loadImg=$('#load'),
+timeStripe=$('#timeStripe'),
+ recomMass=	JSON.parse('<%-frame%>');
+var check=true;
+var mass='<%-body%>' 
+var timeSet;
+
+mass=JSON.parse(mass) 
+console.log(mass)
+var index={ 
+	location:function(){
+		window.location.hash=index.season+'s'+index.serie;
+		
+	},
+	setSerie:function(){
+	var	season=Cookies.get('season');
+	var	serie=Cookies.get('serie');	
+		var hash=window.location.hash;
+
+		if(hash.length!=0){
+			var hashMass=	hash.substring(1).split('s');
+			timeSet=hashMass[1]==serie&&hashMass[0]==season?Cookies.get('time'):0;
+			
+
+this.serie=hashMass[1];
+this.season=hashMass[0];			
+		}else{
+			console.log('it is cookies')
+			
+
+
+	if(season!=undefined&&serie!=undefined){
+		console.log('cookies defined')
+this.serie=serie;
+this.season=season;	
+		timeSet=Cookies.get('time');
+	}else{
+			console.log('cookies undefined')
+this.serie=1;
+this.season=1;
+	
+	}
+	
+	
+	
+		}
+		
+	},
+	
+	getData:function(data){ 
+			var metaData; 
+			for ( var key in mass.db[data][this.season]){ 
+			if(key<=this.serie){ 
+			metaData=mass.db[data][this.season][key]; 
+								}} 
+			return metaData 
+						  },
+	
+	
+	
+	time:'', 
+	
+	
+	getCurrentTime:function(duration){ 
+	
+		
+					this.time=duration-this.getData("time"); 
+									}, 
+					href:'', 
+					season:1, 
+					serie:1, 
+					name:mass.id, 
+					getFilePath:function(){ 
+					return this.season + this.name + this.serie 
+											} 
+
+		} 
+console.log(mass)
+
+
+  
+var video={ 
+
+	abort:function  (e){
+	       console.log('abort')
+	       var errorTime=window.errorTime;
+	       var errorPlay=window.errorPlay;
+	       video.get(index.getFilePath(),index.getData('token'),true) 
+	       !errorPlay?video.play(videoTag.get(0),true):video.play(videoTag.get(0),false);
+           index.time=index.getData('time')
+	       $(this).get(0).currentTime=errorTime
+                        },
+	
+	get: function (filePath,token,setBoolean){ 
+        console.log(token)
+		          console.log('filePath'+filePath)
+		          $.ajax({
+                            method:'GET', 
+                      
+				            url:"https://cloud-api.yandex.net/v1/disk/resources/download?path="+filePath , 
+                      
+                            headers:{ 
+				            Authorization:token 
+                                    }, 
+	
+	
+	complete:function(data,string){ 
+
+					var link=JSON.parse(data.responseText).href;
+					index.href=link.slice(0,link.indexOf('&etag')) 
+                    console.log(index.href)
+				    setBoolean?video.set(index.href):null; 
+
+								  } 
+				        })
+                                            },
+	
+	set:function(link){ 
+		          videoTag.attr('src',link) 
+                      }, 
+	
+
+	
+	play:function (self,playIt){ 
+        self.pause()
+        videoTag.unbind('error')
+                    self.load();
+                    var promise=new Promise ((res,rej)=>{ 
+                       $('#bigPlay').css('display','none')
+                      loadImg.css('display','block') 
+loadImg.attr('src','img/load.gif')
+	                var load=setInterval(function(){ 
+        
+		                  function play (){
+       
+			             playIt?self.play():self.pause();
+			             
+                         res(load)
+		                                  }         
+
+                            self.readyState!=4&&isNaN(self.duration)?'':play();
+						
+                                                    },1500) 
+									                    }
+						                      ) 
+
+
+
+promise.then(result=>{ 
+						clearInterval(result) 
+                        setTime($('#timeText'),['#1','#2','#3','#4'],['00','00',writeTime(self.duration/60),
+	                    writeTime(self.duration%60)	])
+                         loadImg.css('display','none')
+                         loadImg.attr('src',' ')
+                        $('#bigPlay').css('display','block')
+						$("#stripeThumb").css('width','0%')
+                        if(timeSet){
+            videoTag.get(0).currentTime=timeSet;
+            timeSet=0;
+                            videoTag.on('error',video.abort)
+                        }
+						check=true;
+
+                        })
+
+                            }
+                    }
+ function setTime($,selectorMass,fncMass){
+	selectorMass.forEach((item,i,arr)=>{
+		$.children(item).html(fncMass[i])
+	}) 
+ }
+
+
+timeStripe.on('mousedown',function(e){
+
+
+	var time;
+	var stripeThumb=$("#stripeThumb");
+
+	function getWidth(elem){
+	
+		elem.css("width",(segment/timeStripe.width())*100+'%')
+	}
+
+	videoTag.get(0).pause();
+	
+	
+	var segment=e.pageX-$(this).offset().left ;
+	
+	getWidth(stripeThumb)
+	
+	
+	$(this).bind('mousemove',function(e){
+		 segment=e.pageX-timeStripe.offset().left;
+	
+			if(segment>0&&segment<timeStripe.width()){
+			getWidth(stripeThumb)
+													 }
+										}
+				)
+	
+	
+	
+	$(window).bind('mouseup',function(e){
+
+	time=videoTag.get(0).duration*(segment/timeStripe.width())
+	
+		videoTag.get(0).currentTime=time;
+		videoTag.get(0).play();
+		
+		timeStripe.unbind('mousemove')
+		$(window).unbind('mouseup')
+
+
+
+		
+	})
+	
+})
+
+
+videoTag.on('waiting',function(){
+   loadImg.css('display','block') 
+loadImg.attr('src','img/load.gif')
+console.log('waiting')
+})
+
+videoTag.on('playing',function(){
+   loadImg.css('display','none')     
+loadImg.attr('src',' ')
+console.log('loaded')
+})
+
+
+$(window).on('unload',function(){
+
+	Cookies.set('time',videoTag.get(0).currentTime);
+	Cookies.set('serie',index.serie);
+	Cookies.set('season',index.season);
+})
+
+
+
+
+/*$('.fullscreen').on('click',function(){
+    videoTag[0].play();$('#bigPlay').css('display','none')
+$('.fullscreen').unbind('click') 
+})*/
+
+$('#play,#bigPlay').on('click',()=>{
+    
+	videoTag[0].paused?videoTag[0].play():videoTag[0].pause();
+})
+
+videoTag.mousestop({delay: 4000},()=> {
+    if(window.checkFullScreen){
+$('html').css('cursor','none')
+	hideDiv('div#stripe',500)		
+    }
+});
+		  
+		  
+videoTag.mousemove(function() {
+$('html').css('cursor','default')
+$('div#stripe').css('opacity')==0?showDiv('div#stripe',500):'';
+});
+
+
+
+function writeTime (num){
+	num=Math.floor(num)+"";
+	if(isNaN(num)){
+		return '00'
+	}
+	else if(num.length<2){
+		return 0+num
+	}
+		return num	
+}
+
+		  
+
+		  
+
+
+
+
+
+
+
+
+
+var setThumbToTime= function (duration,time,thumb){
+	thumb.css("width",time/duration*100+'%')
+}
+
+
+
+
+videoTag.on('progress',function(){
+try{var video=$(this).get(0);
+setThumbToTime(video.duration,video.buffered.end(video.buffered.length-1),$('#bufferStripe'))
+   }
+    catch(e){}
+})
+
+
+
+function showDiv (elem,time){ 
+$(elem).animate({opacity:1},{duration:time,easeing:"easein"}) 
+} 
+		  
+		  
+function hideDiv (elem,time){ 
+$(elem).animate({opacity:0},{duration:time,easeing:"easein"}) 
+} 
+		  
+		  
+
+
+
+
+
+	function toolFunc (elem,position,width,dur){
+	var now=(position-$('#timeStripe').offset().left)/width;
+		now=now>0?now:0;
+	var half=$(elem).width()/2;
+	var left=(position-videoTag.offset().left-half)/videoTag.width()*100;
+	elem.css("left",left
++'%'
+			
+).children('#text').text(
+writeTime((now*dur)/60)+':'+writeTime((now*dur)%60)
+	)
+}
+		  
+document.getElementById('fullScreen').addEventListener('webkitfullscreenchange',
+function(){
+				var fullscreen=$('.fullscreen')
+				var video=videoTag
+				function setFulScreen(obj,self){
+					    video.css('height',obj.video)
+                        $('#timeText').css('line-height',obj.fontSize)
+                        $('#timeText').css('height',obj.fontSize)
+						$('#timeText').css('font-size',obj.fontSize)
+                        $('#timeText').css('top',obj.top)
+						window.checkFullScreen=obj.bool;
+                        
+				}			
+window.checkFullScreen?setFulScreen(
+{top:'calc((100% - 1.1vw) / 2 )',
+ img:'top: 21.4%',
+ video:'auto',
+ fontSize:'1.1vw',
+ bool:false}
+    ,this):
+    setFulScreen({video:'100vh',
+            img:'18.5%',      
+              top:'calc((100% - 1.5vw) / 2)',
+              fontSize:'1.5vw',
+              bool:true},
+             this);	
+},false)
+
+		  
+angular.module("seriesApp",[]).controller("seriesCtrl",function($scope,$rootScope){ 
+$scope.mass=mass; 
+	
+	$scope.procent=25.6;
+	recomMass.forEach(function(item,i,arr){
+		if(i==0){
+		item.limitation=0
+			
+		}
+				else if(i==arr.length-1){
+		item.limitation=+(3*$scope.procent).toFixed(3)	
+
+		}
+    item.left=+(i*$scope.procent).toFixed(3);
+	
+	
+});
+$scope.recommendation=recomMass;
+
+$scope.events={
+	zoom:{
+		str:'checkFullScreen',
+			bool:window,
+	
+		
+			imgFunc:function(){
+			$('.fullscreen').fullScreen(!window.checkFullScreen)
+
+
+},
+		
+			img:['img/zoomIn.svg','img/zoomOut.svg']
+},
+	
+	
+	
+			sound:{
+				str:'muted',
+				bool:videoTag[0],	
+				imgFunc:function(){
+
+					if(this.bool[this.str]){
+					this.bool[this.str]=false;
+									}	
+					else{
+					this.bool[this.str]=true;
+									}	
+									},
+			img:['img/offSoundIcon.svg','img/soundIcon.svg']
+	},
+	
+	
+
+
+			}
+
+
+
+
+$scope.selectSerieUp=index.serie; 
+$scope.selectSeasonUp=index.season; 
+$scope.changeSeason=1; 
+	
+	
+$scope.changeSerie=function(number){ 
+$scope.changeSeason=number; 
+    console.log('change:'+$scope.changeSeason)
+//$scope.selectSeasonUp=number; 
+//$scope.startNewVideo($scope.selectSerieUp,$scope.selectSeasonUp) 
+
+} 
+
+ $scope.changeCss=(season)=>{
+	if ( season==$scope.changeSeason ){
+		return "selectLishadow"
+	}  
+     else{
+         return ''
+     }
+ }
+ $scope.changeGradient=(serie)=>{
+	if ( serie==$scope.selectSerieUp&&$scope.selectSeasonUp==$scope.changeSeason ){
+		return "serieShadow"
+	}  
+ }
+$scope.startNewVideo=function(serie,season){ 
+
+$scope.selectSerieUp=serie; 
+ $scope.selectSeasonUp =season
+index.season=season; 
+index.serie=serie; 
+	index.location();
+video.get(index.getFilePath(),index.getData('token'),true) 
+video.play(videoTag.get(0),false) 
+ index.time=index.getData('time')
+} 
+$scope.createSelectSerie=function(mass){ 
+var selectObj={}; 
+	console.log(mass)
+for (var i=1;i<=mass.count;i++){ 
+selectObj[i]=i; 
+} 
+
+return selectObj 
+} 
+
+$scope.createSelectSeason=function(mass){ 
+var selectObj={}; 
+for (var obj in mass){ 
+if(!isNaN(obj)){ 
+selectObj[obj]=obj; 
+}} 
+
+return selectObj 
+} 
+
+
+
+}).directive('tool',function (){
+	
+	return function($scope,elem,attrs){
+		
+		
+		
+	$('.svgStripe').on('mousemove',function (e){
+
+		
+	var	segment=e.pageX
+		var videoXml=videoTag.get(0)
+	var duration=!isNaN(videoXml.duration)?videoXml.duration:0
+		
+	toolFunc($(elem),segment,timeStripe.width(),duration)
+	})	
+	}}).directive('changeImg',function (){
+	
+	return function($scope,elem,attrs){
+		
+	
+
+		var obj=$scope.events[attrs.changeImg];
+$(elem).on('click',function(){
+	if(obj.bool[obj.str]){
+	$(elem).attr('src',obj.img[1])
+	}
+	else{
+$(elem).attr('src',obj.img[0])
+	}
+	obj.imgFunc()
+})
+	}	
+	
+
+
+
+	
+	}).directive('videoEvents',function (){
+	
+	return function($scope,elem,attrs){
+
+$scope.screenWindow = {
+    controls:'',
+findScreen:function (width){
+    
+if(width>=1200){elem.removeAttr('controls')}
+else{
+ elem.attr('controls','')  
+}
+    console.log($scope.screenWindow.controls)
+} ,
+screenEvt:function (){
+    this.findScreen(window.innerWidth)
+    $(window).resize(()=>{
+     this.findScreen(window.innerWidth)   
+    })
+}    
+          }
+$scope.screenWindow.screenEvt()
+				  $(document).on('keydown',function(e){
+			  if(e.keyCode==32){
+videoTag.get(0).paused?$(videoTag).get(0).play(): $(videoTag).get(0).pause();
+			  }
+			  if(e.keyCode==27&&window.checkFullScreen){
+$scope.events.zoom.imgFunc()
+			  }
+		
+		  })
+		
+	var play=$('#imgPlay')
+
+$(elem).on('play',function(){
+
+		play.attr('src','img/pause.svg')
+        $('#bigPlay').css('display','none') 
+
+})
+$(elem).on('pause',function(){
+	play.attr('src','img/playIcon.svg')
+$('#bigPlay').css('display','block') 
+})
+		$(elem).on('click',function(){
+//console.log('it is video click')
+	if($(elem).get(0).paused){
+		$(elem).get(0).play()
+
+			
+							}
+	else{
+		$(elem).get(0).pause()
+
+		}								}
+	
+				 )					
+		
+		
+		
+		
+		
+	$(elem).on("timeupdate",function(){ 
+		var duration=$(this).get(0).duration;
+		var current=$(this).get(0).currentTime;
+		
+		
+		
+		
+		
+try{
+	
+window.errorTime=$(this).get(0).currentTime!=0?$(this).get(0).currentTime:window.errorTime;
+window.errorPlay=$(this).get(0).currentTime!=0?$(this).get(0).paused:window.errorPlay
+
+}
+	catch(e){
+		window.errorTime=0;
+window.errorPlay=true;
+	}
+
+		
+		
+		
+		function checkCount ()
+{
+	if(index.serie==mass.db.time[index.season].count){ index.season++; index.serie=1 ;}
+	else index.serie++;	
+    console.log(index)
+}
+		
+	 function getNeedTime (){
+		return duration-current
+	 			}
+if( (getNeedTime()<=index.time) && !isNaN(duration) )
+{ 
+				//check=false;
+				$(elem)[0].pause();
+		if(check){
+			console.log('check trye')
+ 	checkCount()
+	console.log('serie:'+index.serie)
+	video.get(index.getFilePath(),index.getData('token'),true)
+		}
+		else{
+				console.log('check false')
+ 	checkCount()
+			video.set(index.href) 
+	}
+
+		
+
+			video.play(videoTag.get(0),true)
+
+
+	$scope.$apply(()=>{$scope.selectSerieUp=index.serie;
+                      $scope.selectSeasonUp=index.season; 
+                      })
+	
+			} 
+		
+		
+		else if(check&&getNeedTime()<=index.time+120&&!isNaN(duration))
+        { 
+console.log('per')
+			
+check=index.serie!=mass.db.time[index.season].count
+?beforeVideo(index.season,Number(index.serie)+1):beforeVideo(Number(index.season)+1,1);
+			 
+} 
+
+
+
+
+$('#timeText').children("#1").html(writeTime(current/60))
+$('#timeText').children("#2").html(writeTime(current%60))
+	
+setThumbToTime(duration,current,$('#stripeThumb'))
+
+	})
+
+		
+		
+		
+	
+
+
+
+	
+	}}).directive('animate',function (){
+		return function($scope,elem,attrs){
+		
+			function animate(sign){
+				return function(){
+		var summ=+($scope.recommendation[attrs.animate].left+(sign*$scope.procent)).toFixed(3);
+		$scope.$apply(function(){		
+		if($scope.recommendation[0].left==$scope.recommendation[0].limitation&&sign==1){
+		return}
+						
+if($scope.recommendation[$scope.recommendation.length-1].left==$scope.recommendation[$scope.recommendation.length-1].limitation&&sign==-1)
+		{return}
+						
+setTimeout(function(){$(elem).animate({left:summ+'%'},{duration:500,easeing:"easein"})
+$scope.recommendation[attrs.animate].left=summ},0)
+
+					})
+				}
+				
+			}
+				
+			$scope.recommendation[attrs.animate];
+			$('#rightButton').on('click',animate(-1))
+			
+			
+	$('#leftButton').on('click',animate(1))
+			
+		
+	
+	
+}}).directive('soundRegulation',function (){
+    
+		return function($scope,elem,attrs){
+            
+    function del (e){
+       
+       try {
+       if(e.target.className==undefined||e.target.className.indexOf('animSound')==-1)
+       {
+         
+        $(elem).animate({
+           "opacity":0
+        },100,"linear")
+       
+       $('#fullScreen').unbind('mouseover') 
+       }
+       }
+               catch(e){}
+}        
+    function regulate (e){
+var change=1-((e.pageY-stripe.offset().top)/stripe.height()) ;
+    change=change>1?1:change;    
+
+
+$(stripe).children('#redStripe').css('height',(change*100)+'%') ;
+if(Math.floor(change*100 )==0){
+  $scope.events.sound.imgFunc()
+  sound.attr('src',$scope.events.sound.img[0])
+  return videoTag.get(0).muted=true;
+}else if($scope.events.sound.bool.muted&&change>0){
+  sound.attr('src',$scope.events.sound.img[1])
+}
+          videoTag.get(0).volume=change;
+    }        
+            
+  var sound=    $('#sound');     
+var stripe = $(elem).children('.stripeRegulator');
+$(elem).on('mousedown',function(e){
+    regulate(e);
+           $('#fullScreen').unbind('mouseover') 
+   	$(this).on('mousemove',regulate) 
+    $(document).on('mouseup',function(){
+        $('#fullScreen').on('mouseover',del)
+        $(elem).unbind('mousemove')
+        $(document).unbind('mouseup')
+        
+    })
+})            
+	sound.on('mouseenter',function(){
+        $(elem).animate({
+            "opacity":1
+        },100,"linear")
+        
+           $('#fullScreen').on('mouseover',del)
+        
+    })
+
+    
+    
+}})
+index.location()
+
+ video.get(index.getFilePath(),index.getData('token'),true) 
+
+video.play(videoTag.get(0),false)
+
+function beforeVideo(season,serie){
+	console.log('beforeVideo')
+	console.log('serie'+serie)
+video.get(season+index.name+serie,index.getData('token'),false) 
+return false}
+
+index.time=index.getData('time') 
+
+		 index.setSerie() 
+$('div#description').html(mass.db.text) 
+$("#imgDes").attr('src',mass.info.imgDes) 
+$("#imgMob").attr('src',mass.info.imgMob) 
+$(".descriptionName").html(mass.name)  
+	  </script>
+
+</body>
+</html>
