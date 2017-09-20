@@ -1,36 +1,29 @@
-<script src="js/jquery-3.0.0.min.js"></script>
-<script src="js/angular.min.js"></script>
 <!DOCTYPE>
-<html lang="ru" ng-app="filmApp" ng-controller="filmCtrl"  >
+<html lang="ru" style="overflow-y:scroll" ng-app="filmApp" ng-controller="filmCtrl"  >
   <head>
-      
+      <script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/angular.min.js"></script>
 	<script src="js/mousestop.js"></script>
 	<script src="js/js.cookie.js"></script>
 	<script src="js/jquery.fullscreen-min.js"></script>
-<meta name="google-site-verification" content="58RrUpwesv73YR67qBx5PYgzlM_5oncHQ_PjQsVSSpY" />
-    <meta name="yandex-verification" content="5cf79ad960196d53" />
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">	
+	
 <META Name="Publisher-Email" Content="600amper@gmail.com">	
-<META Name="revisit-after" Content="2 days">		 
-<meta name="description" content="Фраймс фильмы смотреть 
+<META Name="revisit-after" Content="2 days">	
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="фильмы смотреть 
                                   Frimes- это новый онлайн кинотеатр бесплатного пользования. Вам больше не нужно ждать телепремьер или стоять тысячные очереди в кино. 
 Теперь, чтобы посмотреть любимую новинку, Вам достаточно совершить несколько кликов и удобно расположиться на диване. 
 На нашем сервисе, Вы можете найти: сотни фильмов, сериалов, комедийных шоу в жанре стендап в хорошем качестве. Большой выбор и разнообразие жанров не оставит никого равнодушным. 
 Каждый сможет найти для себя множество любимых фильмов или, схожих с Вашими вкусами, сериалов. Нет никаких органический, выбирайте, что Вы хотите. 
 Провести тёплый семейный вечер за просмотром отличного кино? Посмотреть все сезоны сериала в режиме марафона с друзьями? Всё это, и многое другое, вам поможет осуществить Frimes. 
-Наш дизайн и техническая начинка- полностью авторская разработка. Поэтому, у нас Вы не найдёте назойливой рекламы или платных показов, а наш простой и удобный интерфейс не предоставит вам неудобств.">     
+Наш дизайн и техническая начинка- полностью авторская разработка. Поэтому, у нас Вы не найдёте назойливой рекламы или платных показов, а наш простой и удобный интерфейс не предоставит вам неудобств.">    
+ <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		 
     <title>Поиск сериалов</title>
 	  <meta charset="utf-8">
 
 	   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	  <link href="css/mainCss.css" rel="stylesheet"> 
-
-
-<style>
-
-	  </style>
-		
 <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter42920644 = new Ya.Metrika({ id:42920644, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true, ut:"noindex", ecommerce:"dataLayer" }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <!-- /Yandex.Metrika counter -->
 	
 	</head>
@@ -96,51 +89,51 @@
 			<div class="lgMd col-lg-10 col-lg-offset-1 col-sm-12  col-md-10  col-md-offset-1  hidden-xs" style="white-space:nowrap;height:100%;padding-left:4vw;height:100%;padding-right:4vw" >
 			
 	
-						<div class="  center logo-lg" style="display:inline-block;width:15%;"> 
+<a href="/"><div class="  center logo-lg" style="display:inline-block;width:15%;"> 
 							Frimes
 						</div>
 
-				<div class=" head-color" style="vertical-align:top;display:inline-block;padding-right:0px;width:85%;white-space: normal;">	
-             <a href="/">
+				<div class=" head-color" style="vertical-align:top;display:inline-block;padding-right:0px;width:85%;">	
+                <a href="/">
 					<div  class="frameWidth mouse" id="animateDad" >
-						<div class="padding" style="height:93%">
+						<div class="padding" >
 							<div class="center checked">Сериалы</div>
 						</div>
-						<div style="height:7%;background-color:rgb(229, 90, 76);" class="animate checked" >
-						</div>	
-					</div>
-            </a> 
-                <a href="/films">
-					<div  class="frameWidth mouse" id="animateDad" >
-						<div class="padding" style="height:93%">
-							<div class="center">Фильмы</div>
-						</div>
-						<div id="animateBaby" class="animate" >
+                        <div style="height:7%;background-color:rgb(229, 90, 76);" class="animate checked" >
+				
 						</div>	
 					</div>	
                 </a>    
-    
-          <a href="/standup">       
+             <a href="/films">
 					<div  class="frameWidth mouse" id="animateDad" >
 						<div class="padding" >
+							<div class="center">Фильмы</div>
+						</div>
+		<div id="animateBaby" class="animate" >
+						</div>	
+					</div>
+            </a>     
+            <a href="/standup">        
+					<div  class="frameWidth mouse" id="animateDad" >
+						<div class="padding">
 							<div class="center">Стендапы</div>
 						</div>
 						<div id="animateBaby" class="animate" >
 						</div>	
 					</div>
             </a>    
-            <a href="/categories">          
+            <a href="/categories">         
 							<div  class="frameWidth mouse" id="animateDad" >
-						<div class="padding" >
+						<div class="padding">
 							<div class="center">Поиск по категориям</div>
 						</div>
 						<div id="animateBaby" class="animate" >
 						</div>	
 					</div>	
             </a>    
-            <a href="/hot" style="float:right">           
-							<div  class="frameWidth mouse" id="animateDad" >
-						<div class="padding" >
+            <a href="/hot">           
+							<div style="float:right" class="frameWidth mouse" id="animateDad" >
+						<div class="padding" style="height:93%">
 							<div class="center"><img style="margin-bottom:4%" src="img/hot.svg"> Новинки</div>
 						</div>
 						<div id="animateBaby" class="animate" >
@@ -168,13 +161,13 @@
     
     
 
-	<div style="width:100%;z-index:3;padding-bottom:20px;">
+	<div style="width:100%;z-index:3;">
 
 		<div class="back backGround"> 
-<input placeholder="Название сериала" ng-model="input" class="inp inpStyle"> 
+<input placeholder="Поиск сериалов" find ng-model="input" class="inp inpStyle"> 
 </div>
-<div class="divForFilms" >
-<div class="films filmsMargin margin" find ng-repeat="film in filmObject" >
+<div class="divForFilms"  >
+<div class="films filmsMargin margin"  ng-cloak  ng-repeat="film in filmObject" >
 	
 	
 			<a href="/player?series={{film.id}}"><div id="playButton" 
@@ -184,16 +177,14 @@
 				<svg id="button" viewBox="0 0 86 100" class="svg" >
  				<polygon  points="0,0 0,100 86,50"/>
 				</svg>
-				<img alt="{{film.name}}"  style="height:100%;width:100%;z-index:1" align="middle" src="{{film.info.imgDes}}">
+				<img alt="{{film.name}}" style="height:100%;width:100%;z-index:1" align="middle" src="{{film.info.imgDes}}">
 								</div>	</a>
 <span class="film" >
 	<a href="/player?series={{film.id}}"><span class="name" >{{film.name}}</span></a>
 	
-	<div class="country" style="">{{film.info.country}}</div>	
+	<div class="country" style="">{{film.info.country}}</div>
 	
 		<div class="zhanr" ><span class="letter" ng-click="setGanre($parent.$index,$index)" ng-repeat="ganre in film.info.genres"><span class="animGanre">{{ganre}}</span>{{$last?'':', '}}</span></div>		
-<div class="time" >{{film.info.timeCount}}</div>
-			
 <div style="position:absolute;bottom:0px; width:92%;">
 	<span style="text-align:left">
 <img src="img/star.svg" style="height:15px;vertical-align:top;margin-right:2px;">
@@ -201,17 +192,15 @@
 			
 		
 		</div>	
-
 	
 	</span>
-<span style="float:right;margin-top:150px">{{film.info.year}}</span>
-
+<span style="float:right;margin-top:150px" class="ng-binding">{{film.info.year}}</span>  
+<!--<span style="float:left;margin-right:10%;margin-top:150px;margin-left:14px;"></span>-->
 	</div>
-
-
-
-	</div>	
-		
+    <div style="width:100%;height:50px;" >
+    
+    </div>
+	</div>
         
         
         
@@ -219,37 +208,122 @@
 		</div>		
 		<script src="js/frontEnd.js"></script>
 	<script>
-	angular.module("filmApp",[]).controller("filmCtrl",function($scope,$rootScope){ 
-	$scope.filmObject=JSON.parse('<%-body%>'
-);
-
-							
+	angular.module("filmApp",[]).controller("filmCtrl",function($scope,$http){ 
+	$scope.filmObject=`<%-body%>`
+    console.log($scope.filmObject.substring(15420))
+        $scope.filmObject=JSON.parse($scope.filmObject);
+						
 console.log($scope.filmObject)
 $scope.input
+$scope.inputCounter=0;
+$scope.inputMassCounter=0;        
+ $scope.defaultCounter=51;       
+   $scope.ajax=
+       {
+       check:false,
+       get:function(find){ 
+           this.check=true;
+                    console.log('ajax')
+                    console.log(find)
+      
+       
+                    $http.post('/ajax',find).success(function (data){
+                        
+                        var counter=0;      
+           $scope.ajax.check=false;
+       $scope.inputMassCounter+=data.length;
+
+                        console.log(data.length)
+                        
+            $scope.filmObject= $scope.filmObject.concat(data) 
+       })},
+    getInpFindObj:(input)=>{
+      return  JSON.stringify({$or:
+                        [{
+       "info.genres":{$in:[input]}},
+                        {"info.year":input},
+                         {"name":input}
+                        ] })
+   }   
+   }
+   
+   
+       	$(window).on('scroll',function(e){
+
+            if(  window.pageYOffset+screen.height>=$(this).height()&&!$scope.ajax.check){
+         
+                        var find={col:'series'}
+                if($scope.input&&$scope.input!=''){
+                                                 
+                        find.obj=$scope.ajax.getInpFindObj($scope.input);
+                        find.conf={limit:5,skip:$scope.inputCounter+=5}
+                    } 
+                else{
+                    console.log('else')
+                  find.obj=JSON.stringify({});  
+                   find.conf={limit:5,skip: $scope.defaultCounter+=5}                   
+
+                    
+                }
+                console.log('scroll')
+                console.log('skip:'+find.conf.skip)
+                 $scope.ajax.get(find)
+                
+            }
+
+
+    })
+   
 $scope.setGanre=function(pid,id){
+    console.log($scope.filmObject[pid])
     $scope.input=$scope.filmObject[pid].info.genres[id];
 }
 	}).directive('find',function (){
 		return function($scope,elem,attrs){
 	$scope.$watch('input',function(newVal,oldVal){
-if($(elem).text().toLowerCase().indexOf(newVal.toLowerCase())!=-1){
+var counter=0;
+        console.log(newVal)
+     $('.films').each(function(id,elem){
+         
+        var text=$(elem).text();
 
-	$(elem).show(300)
-		.animate({opacity:1.0},100,"linear")		
-		
+            
+if(new RegExp(newVal,'i').test(text)
+    //text.toLowerCase().indexOf(newVal.toLowerCase())!=-1
+  ){
+counter++
+$(elem).css('display','inline-block')	
+
 	}
-		else if (newVal&&newVal!=''){
-			
-	$(elem).animate({opacity:0.0},100,"linear").hide(300)
+else if (newVal&&newVal!=''){
 
-
-				  	
+			$(elem).css('display','none') 	  	
 		}
+  })  
+$scope.inputCounter+=counter
+     if(newVal==''){
+    $scope.filmObject.splice(-$scope.inputMassCounter,$scope.inputMassCounter)
+    $scope.inputMassCounter=0;
+    $scope.inputCounter=0;     
+         
+          }
+     if(counter<9&&newVal){
+         console.log('counter:'+counter)
+         var find={col:'series'};
+        find.obj=$scope.ajax.getInpFindObj(newVal);
+        find.conf={limit:9,skip:counter}
+         $scope.ajax.get(find)
+         
+     }
+
 })	
-	
+    
+
 }})
+
+
 	
-	
+
 	
 	</script>
 	</body>

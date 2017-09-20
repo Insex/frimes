@@ -9,7 +9,7 @@
  			"imgDes": "img/sv.jpg",
  			"imgMob": "img/svm.jpg",
  			"seasonduration": 0,
- 			"genres": ["фантастик","вестерн"],
+ 			"genres": ["фантастика","комедия"],
 
  			"criticm": 8.6
  		},
@@ -41,7 +41,7 @@
  			"imgDes": "img/bm.jpg",
  			"imgMob": "img/bmm.jpg",
  			"seasonduration": 0,
- 			"genres": ["фантастика","антиутопия","драма"],
+ 			"genres": ["фантастика","драма"],
 
  			"criticm": 8.4
  		},
@@ -90,7 +90,7 @@
  			"imgDes": "img/gt.jpg",
  			"imgMob": "img/gtm.jpg",
 
- 			"genres": ["криминал","фантастика","детектив"],
+ 			"genres": ["фантастика","детектив"],
 
  			"criticm": 7.7
  		},
@@ -138,7 +138,7 @@
  			"imgDes": "img/vk.jpg",
  			"imgMob": "img/vkm.jpg",
  			"seasonduration": 0,
- 			"genres": ["история","драма"],
+ 			"genres": ["драма"],
 
  			"criticm": 8.2
  		},
@@ -405,7 +405,7 @@
  			"year": 2015,
  			"imgDes": "img/nk.jpg",
  			"imgMob": "img/nkm.jpg",
- 			"genres": ["криминал","драма"],
+ 			"genres": ["драма"],
 
  			"criticm": 8.4
  		},

@@ -2,9 +2,11 @@
 var utf=require('urlencode');
 var express=require('express');
 var app=express();
+const fs=require('fs');
 var url=require('url')
 var http = require('http');
-var port=80,mainUrl="localhost"
+var port=80,mainUrl="localhost";
+
 var bodyParser = require('body-parser');
 
 
@@ -22,16 +24,18 @@ function client (obj){
     
 		function getVideo (){
       
-
+        
             
 		return function (req, res) {
-            
+           
                     function   getRecommendation(obj,collection,res){
-
+   
     collection.aggregate(obj).toArray(function(err,docs){
                     if(!err&&docs[0]!=undefined){
+                        
                         res(docs) 
-                           
+                    }else{
+                   
                     }
                 })
                                 
@@ -71,10 +75,9 @@ not("notFound",503)(req,res);
               get("name",resolve)
           }).then((resultt)=>{
               
-                  new Promise((res,rejj)=>{
-
-                      
-getRecommendation([{$match:{genre:resultt.docs.genre[Math.round((resultt.docs.genre.length-1)*Math.random())]}},{$sample:{size:11}},{$project:{img:1,name:1,_id:0}}],collection,res);
+new Promise((res,rejj)=>{
+           
+getRecommendation([{$match:{genre:resultt.docs.genre[Math.round((resultt.docs.genre.length-1)*Math.random())]}},{$sample:{size:11}},{$project:{img:1,name:1,_id:0,id:0}}],collection,res);
 
 }).then((resul)=>{
 
@@ -90,16 +93,20 @@ getRecommendation([{$match:{genre:resultt.docs.genre[Math.round((resultt.docs.ge
              
             break;
          case 'series':
+            
                        new Promise((resolve,rej)=>{
+                          
               get("id",resolve)
           }).then((resultt)=>{
              
                   new Promise((res,rejj)=>{
 
                 
-getRecommendation([{$sample:{size:6}},{$project:{id:1,info:1,name:1,_id:0}}],collection,res);
+getRecommendation([{$match:{"info.genres":resultt.docs.info.genres[Math.round((resultt.docs.info.genres.length-1)*Math.random())]}},{$sample:{size:11}},{$project:{"info.imgDes":1,name:1,_id:0,id:1}}],collection,res);
 
 }).then((resul)=>{
+               
+if(!resultt.docs.links){
 
                  res.render('player.ejs',{
                     body:JSON.stringify(resultt.docs),
@@ -107,7 +114,18 @@ getRecommendation([{$sample:{size:6}},{$project:{id:1,info:1,name:1,_id:0}}],col
                      name:resultt.docs.name,
                      year:resultt.docs.info.year,
                      description:resultt.docs.db.text,
+                     })}
+else{
+      
+                     res.render('playerIframe.ejs',{
+                    body:JSON.stringify(resultt.docs),
+                     frame:JSON.stringify(resul),
+                     name:resultt.docs.name,
+                     year:resultt.docs.year,
+                     description:resultt.docs.text,
                      })
+}
+                      
                  })
              })
                        
@@ -155,7 +173,6 @@ app.post('/ajax',function(req,res){
    ajax.obj=JSON.parse(ajax.obj,function(key,val){
        if(typeof val=='string'){
            var xuy=new RegExp(val,'i');
-           console.log(xuy)
        return xuy
        
        }
@@ -165,7 +182,7 @@ app.post('/ajax',function(req,res){
         var collection=obj.collection(ajax.col);
 	collection.find(ajax.obj,{text:0,"_id":0},ajax.conf).toArray(function(err, docs) {
 	if(err||docs[0]==undefined){
-
+console.log('err',err)
         res.send([])
        res.end()
 		}else{	
@@ -176,7 +193,7 @@ app.post('/ajax',function(req,res){
 })
 })
 
-app.get('/', getPage('series',"index.ejs",{db:0,"_id":0},{limit:100}))
+app.get('/', getPage('series',"index.ejs",{text:0,url:0,links:0,db:0,"_id":0},{limit:30}))
 
 app.use(not("notFound",404))
 server.listen(port,mainUrl);

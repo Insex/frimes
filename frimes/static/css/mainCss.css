@@ -23,6 +23,11 @@
 .checked{
     color:#e55a4c;
 }
+#iframe{
+        height: 41.826vw;
+    width: 74.358vw;
+    width: 74.358vw;
+}
 .checked#animateBaby{
     background-color:rgb(229, 90, 76);
 }
@@ -423,10 +428,8 @@ width:0px;height:0px;
 		}
 	.description{
 		height:100%;
-
 		padding-left:3%;
 		padding-right:2%;
-		margin-bottom:4vw;
 		color:#666666;
 		padding-top:1%
 		
