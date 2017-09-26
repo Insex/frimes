@@ -6,7 +6,10 @@ const fs=require('fs');
 var url=require('url')
 var http = require('http');
 var port=80,mainUrl="localhost";
-
+var ssl={
+    cert:fs.readFileSync('domain_name.crt'),
+    key:fs.readFileSync('private.key')
+};
 var bodyParser = require('body-parser');
 
 
@@ -29,10 +32,9 @@ function client (obj){
 		return function (req, res) {
            
                     function   getRecommendation(obj,collection,res){
-   
+  
     collection.aggregate(obj).toArray(function(err,docs){
                     if(!err&&docs[0]!=undefined){
-                        
                         res(docs) 
                     }else{
                    
@@ -77,7 +79,7 @@ not("notFound",503)(req,res);
               
 new Promise((res,rejj)=>{
            
-getRecommendation([{$match:{genre:resultt.docs.genre[Math.round((resultt.docs.genre.length-1)*Math.random())]}},{$sample:{size:11}},{$project:{img:1,name:1,_id:0,id:0}}],collection,res);
+getRecommendation([{$match:{genre:resultt.docs.genre[Math.round((resultt.docs.genre.length-1)*Math.random())]}},{$sample:{size:11}},{$project:{img:1,name:1,_id:0}}],collection,res);
 
 }).then((resul)=>{
 
@@ -142,15 +144,12 @@ else{
 	}
 	function not (path,code){
     return function (req,res){
-        
-
             res.statusCode=code;
         res.render(path);
     }}
 
 var server=http.createServer(app)
 app.set('view engine', 'ejs');
-	
 	app.use(express.static('static'))	
 	app.use(bodyParser.json()); 
     	app.use(bodyParser.raw());
@@ -159,7 +158,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/player',getVideo())
-
+app.get('/moontest.txt',function(req,res){
+    res.render('moontest.ejs')
+})
 app.get('/standup',not("notMade.ejs",503))
 
 app.get('/films',getPage('films',"films.ejs",{text:0,"_id":0},{limit:51}))
@@ -182,7 +183,6 @@ app.post('/ajax',function(req,res){
         var collection=obj.collection(ajax.col);
 	collection.find(ajax.obj,{text:0,"_id":0},ajax.conf).toArray(function(err, docs) {
 	if(err||docs[0]==undefined){
-console.log('err',err)
         res.send([])
        res.end()
 		}else{	
@@ -192,10 +192,11 @@ console.log('err',err)
         }
 })
 })
-
-app.get('/', getPage('series',"index.ejs",{text:0,url:0,links:0,db:0,"_id":0},{limit:30}))
+app.get('/standup',not("notMade.ejs",503))
+app.get('/', getPage('series',"index.ejs",{text:0,url:0,links:0,db:0,"_id":0},{limit:51}))
 
 app.use(not("notFound",404))
+
 server.listen(port,mainUrl);
 
 }

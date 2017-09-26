@@ -152,7 +152,11 @@
 			<div style="">
                 
 <div class="fullScreen margin" style="position:relative;width:100%" id="fullScreen">
-    <iframe id="iframe"></iframe>
+   
+	<iframe allowfullscreen="" width="640" height="500" controls style="background-color:black;width:100%;height:48vw;vertical-align:middle;display:inline-block" id="iframe" src="" >
+			
+			
+	</iframe>
 
 			</div></div>
 
@@ -191,10 +195,10 @@
 						
 						<div id="descriptionName" class="descriptionName descriptMargin" style=""></div>	
 						
-						
-						<img id="imgDes" src="" style="margin-right:3%;margin-top:2.1%;float:left;padding-left:2%;padding-right:0px;" class="centerImg hidden-xs">
+						<img id="imgDes" src="" style="" class="centerImg">
+						<!--<img id="imgDes" src="" style="margin-right:3%;margin-top:2.1%;float:left;padding-left:2%;padding-right:0px;" class="centerImg">
 
-						<img id="imgMob" src="" style="margin-bottom:2%;width:100%;padding-right:3%;padding-left:3%;" class=" visible-xs ">
+						<img id="imgMob" src="" style="margin-bottom:2%;width:100%;padding-right:3%;padding-left:3%;" class=" visible-xs ">-->
 						
 						
 						
@@ -282,7 +286,7 @@ mass=JSON.parse(mass)
 console.log('mass',mass)
 var index={ 
 	location:function(){
-		window.location.hash=index.season+'s'+index.serie;
+		window.location.hash=(index.season+1)+'s'+(index.serie+1);
 	},
 	setSerie:function(){
     var serial= Cookies.get('serial');   
@@ -438,8 +442,6 @@ $scope.recommendation[attrs.animate].left=summ},0)
 	
 	
 }})
-
-console.log(index)
  video.set(video.get(index.serie,index.season) )
 		 index.setSerie() 
         index.location()
