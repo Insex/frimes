@@ -37,7 +37,7 @@
 	
 		<div class="menuScroll">
 
-		<a href="/"><div class="  menuText" style="/*margin-top:10%;*/">
+				<a href="/"><div class="  menuText" style="/*margin-top:10%;*/">
 		<span class="menuSpan">Сериалы</span>
 			
 		</div>
@@ -49,25 +49,12 @@
 			
         </div></a>
         <hr >    
-		<a href="/standup"><div class="  menuText" >
-		<span class="menuSpan">Стендапы</span>
+		<a href="/anime"><div class="  menuText" >
+		<span class="menuSpan">Аниме</span>
 		
         </div>
-        	    
-            </a>
-            <hr >
-		<a href="/categories"><div class="  menuText" >
-		<span class="menuSpan">Категориям</span>
-			
-				
-        </div></a>
-        <hr >    
-        <a href="/hot"><div class="  menuText" >
-                    
-		<span class="menuSpan"><img style="margin-bottom:4.12px;margin-right:1%;" src="img/hot.svg">Новинки</span>
-			
-				
-		</div>  </a> <hr> 
+      	    
+            </a> <hr> 
 		</div>
 	</div>
 	
@@ -104,33 +91,15 @@
 					</div>	
                 </a>    
     
-            <a href="/standup">        
+            <a href="/anime">        
 					<div  class="frameWidth mouse" id="animateDad" >
 						<div class="padding" >
-							<div class="center">Стендапы</div>
+							<div class="center">Аниме</div>
 						</div>
 						<div id="animateBaby" class="animate" >
 						</div>	
 					</div>
-            </a>    
-            <a href="/categories">         
-							<div  class="frameWidth mouse" id="animateDad" >
-						<div class="padding" >
-							<div class="center">Поиск по категориям</div>
-						</div>
-						<div id="animateBaby" class="animate" >
-						</div>	
-					</div>	
-            </a>    
-            <a href="/hot">           
-							<div style="float:right" class="frameWidth mouse" id="animateDad" >
-						<div class="padding" >
-							<div class="center"><img style="margin-bottom:4%" src="img/hot.svg"> Новинки</div>
-						</div>
-						<div id="animateBaby" class="animate" >
-						</div>	
-					</div>	
-            </a> 
+            </a>  
 				</div>			
 			</div>
 		  </div>					
@@ -557,13 +526,6 @@ $(window).on('unload',function(){
     Cookies.set('serial',mass.id);
 })
 
-
-
-
-/*$('.fullscreen').on('click',function(){
-    videoTag[0].play();$('#bigPlay').css('display','none')
-$('.fullscreen').unbind('click') 
-})*/
 
 $('#play,#bigPlay').on('click',()=>{
     

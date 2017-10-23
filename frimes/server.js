@@ -5,11 +5,7 @@ var app=express();
 const fs=require('fs');
 var url=require('url')
 var http = require('http');
-var port=80,mainUrl="localhost";
-var ssl={
-    cert:fs.readFileSync('domain_name.crt'),
-    key:fs.readFileSync('private.key')
-};
+var port=80,mainUrl="frimes.ru";
 var bodyParser = require('body-parser');
 
 
@@ -50,16 +46,12 @@ function client (obj){
             	var urlMass=parsedUrl.query?parsedUrl.query.split("="):not("notFound",404)(req,res);
 
     function get(name,resolve,func){        
-
-
-
 	collection.aggregate({$match:{[name]:utf.decode(urlMass[1])}},{$limit:1}).toArray(function(err, docs) {
 
 	if(err||docs[0]==undefined){
-        console.log('err')
+        console.log('err',err)
 not("notFound",503)(req,res);	
 		}else{	
-
     var obj={
         docs: docs[0]
     }    
@@ -79,7 +71,7 @@ not("notFound",503)(req,res);
               
 new Promise((res,rejj)=>{
            
-getRecommendation([{$match:{genre:resultt.docs.genre[Math.round((resultt.docs.genre.length-1)*Math.random())]}},{$sample:{size:11}},{$project:{img:1,name:1,_id:0}}],collection,res);
+getRecommendation([{$match:{"info.genres":resultt.docs.info.genres[Math.round((resultt.docs.info.genres.length-1)*Math.random())]}},{$sample:{size:11}},{$project:{"info.imgDes":1,name:1,_id:0,id:1}}],collection,res);
 
 }).then((resul)=>{
 
@@ -94,6 +86,28 @@ getRecommendation([{$match:{genre:resultt.docs.genre[Math.round((resultt.docs.ge
              })
              
             break;
+    case 'anime':
+          new Promise((resolve,rej)=>{
+              get("name",resolve)
+          }).then((resultt)=>{
+              
+new Promise((res,rejj)=>{
+           
+getRecommendation([{$match:{"info.genres":resultt.docs.info.genres[Math.round((resultt.docs.info.genres.length-1)*Math.random())]}},{$sample:{size:11}},{$project:{"info.imgDes":1,name:1,_id:0,id:1}}],collection,res);
+
+}).then((resul)=>{
+
+                 res.render('playerAnime.ejs',{
+                    body:JSON.stringify(resultt.docs),
+                     frame:JSON.stringify(resul),
+                     name:resultt.docs.name,
+                     year:resultt.docs.year,
+                     description:resultt.docs.text,
+                     })
+                 })
+             })
+             
+            break;     
          case 'series':
             
                        new Promise((resolve,rej)=>{
@@ -108,7 +122,7 @@ getRecommendation([{$match:{"info.genres":resultt.docs.info.genres[Math.round((r
 
 }).then((resul)=>{
                
-if(!resultt.docs.links){
+if(!resultt.docs.link){
 
                  res.render('player.ejs',{
                     body:JSON.stringify(resultt.docs),
@@ -158,12 +172,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/player',getVideo())
-app.get('/moontest.txt',function(req,res){
+app.get('/moontest',function(req,res){
     res.render('moontest.ejs')
 })
 app.get('/standup',not("notMade.ejs",503))
 
 app.get('/films',getPage('films',"films.ejs",{text:0,"_id":0},{limit:51}))
+
+app.get('/anime',getPage('anime',"anime.ejs",{text:0,"_id":0},{limit:51}))
 
 app.get('/categories',not("notMade.ejs",503))
 
@@ -179,7 +195,6 @@ app.post('/ajax',function(req,res){
        }
        return val
    })
-
         var collection=obj.collection(ajax.col);
 	collection.find(ajax.obj,{text:0,"_id":0},ajax.conf).toArray(function(err, docs) {
 	if(err||docs[0]==undefined){
@@ -193,7 +208,7 @@ app.post('/ajax',function(req,res){
 })
 })
 app.get('/standup',not("notMade.ejs",503))
-app.get('/', getPage('series',"index.ejs",{text:0,url:0,links:0,db:0,"_id":0},{limit:51}))
+app.get('/', getPage('series',"index.ejs",{text:0,url:0,link:0,db:0,"_id":0},{limit:51}))
 
 app.use(not("notFound",404))
 

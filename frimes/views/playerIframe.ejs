@@ -37,7 +37,7 @@
 	
 		<div class="menuScroll">
 
-		<a href="/"><div class="  menuText" style="/*margin-top:10%;*/">
+				<a href="/"><div class="  menuText" style="/*margin-top:10%;*/">
 		<span class="menuSpan">Сериалы</span>
 			
 		</div>
@@ -49,25 +49,12 @@
 			
         </div></a>
         <hr >    
-		<a href="/standup"><div class="  menuText" >
-		<span class="menuSpan">Стендапы</span>
+		<a href="/anime"><div class="  menuText" >
+		<span class="menuSpan">Аниме</span>
 		
         </div>
-        	    
-            </a>
-            <hr >
-		<a href="/categories"><div class="  menuText" >
-		<span class="menuSpan">Категориям</span>
-			
-				
-        </div></a>
-        <hr >    
-        <a href="/hot"><div class="  menuText" >
-                    
-		<span class="menuSpan"><img style="margin-bottom:4.12px;margin-right:1%;" src="img/hot.svg">Новинки</span>
-			
-				
-		</div>  </a> <hr> 
+      	    
+            </a> <hr> 
 		</div>
 	</div>
 	
@@ -104,33 +91,15 @@
 					</div>	
                 </a>    
     
-            <a href="/standup">        
+            <a href="/anime">        
 					<div  class="frameWidth mouse" id="animateDad" >
 						<div class="padding" >
-							<div class="center">Стендапы</div>
+							<div class="center">Аниме</div>
 						</div>
 						<div id="animateBaby" class="animate" >
 						</div>	
 					</div>
-            </a>    
-            <a href="/categories">         
-							<div  class="frameWidth mouse" id="animateDad" >
-						<div class="padding" >
-							<div class="center">Поиск по категориям</div>
-						</div>
-						<div id="animateBaby" class="animate" >
-						</div>	
-					</div>	
-            </a>    
-            <a href="/hot">           
-							<div style="float:right" class="frameWidth mouse" id="animateDad" >
-						<div class="padding" >
-							<div class="center"><img style="margin-bottom:4%" src="img/hot.svg"> Новинки</div>
-						</div>
-						<div id="animateBaby" class="animate" >
-						</div>	
-					</div>	
-            </a> 
+            </a>  
 				</div>			
 			</div>
 		  </div>					
@@ -153,43 +122,13 @@
                 
 <div class="fullScreen margin" style="position:relative;width:100%" id="fullScreen">
    
-	<iframe allowfullscreen="" width="640" height="500" controls style="background-color:black;width:100%;height:48vw;vertical-align:middle;display:inline-block" id="iframe" src="" >
+	<iframe allowfullscreen=""  controls style="background-color:black;width:100%;vertical-align:middle;display:inline-block" id="iframe" src="" >
 			
 			
 	</iframe>
 
 			</div></div>
 
-			
-				<div class="margin selectList">
-			
-					<ul style="	text-align: left;" class="uList center">
-        
-
-                               
-<li ng-class="changeCss(season)"  style="padding-left:42px;padding-right:42px;	margin:0px;" class="selectLi " ng-click="changeSerie(season)"
- 								ng-repeat="season in createSelectSeason(mass.links) ">
-								{{season+1}} Сезон
-							</li>
-
-					
-					</ul>
-					<hr style="margin-top:0px;margin-bottom:10px;margin-left:0px;margin-right:0px;" width="80%" height="1px">
-					<ul class="uList  center">
-							<li class="selectLi  center" ng-click="startNewVideo(serie,changeSeason)" 
-							ng-repeat="serie in createSelectSerie(mass.links[changeSeason]) ">
-	
-                                <span ng-class="changeGradient(serie)" class=" liSerie" >{{serie+1}} Серия</span>
-							</li>
-					</ul>				
-				</div>
-			
-			
-			
-			
-			
-
-			
 			<div class="margin" style="padding-bottom:2.1%;display:table;width:100%;background-color:white;width:100%;">
 					
 						
@@ -281,53 +220,73 @@ Frimes- это новый онлайн кинотеатр бесплатного
 var check=true;
 var mass='<%-body%>' 
 var timeSet;
+                           
+  function onPlayerTimeUpdate (time) {
+$(window).on('unload',function(){
+    Cookies.set('time',time)
+})
+  }
+function cifra(num){
+          if(Number(num<10)){return '0'+num}  
+          else{return num}
+          }
+function loc (season,serie){
+		window.location.hash=season+'s'+serie;
+}
 
+    function onPlayerEpisodeSelected(episode) {
+    loc(episode.season,episode.episode)    
+    Cookies.set('serial',mass.id);   
+	Cookies.set('serie',episode.episode);
+	Cookies.set('season',episode.season);
+    Cookies.set('translator',episode.translator);
+  }
+          
+  function mwPlayerMessageReceive(event) {
+    if (event.data && event.data.message == 'MW_PLAYER_TIME_UPDATE') {
+      onPlayerTimeUpdate(event.data.value);
+    }
+if (event.data && event.data.message == 'MW_PLAYER_SELECT_EPISODE') {
+      onPlayerEpisodeSelected(event.data.value);
+    }
+  }
+     
+          
+  $(function() {
+    if (window.addEventListener) {
+      window.addEventListener('message', mwPlayerMessageReceive);
+    } else {
+      window.attachEvent('onmessage', mwPlayerMessageReceive);
+    }
+  });
+                  
 mass=JSON.parse(mass) 
 console.log('mass',mass)
 var index={ 
-	location:function(){
-		window.location.hash=(index.season+1)+'s'+(index.serie+1);
-	},
-	setSerie:function(){
-    var serial= Cookies.get('serial');   
-	var	season=Cookies.get('season');
-	var	serie=Cookies.get('serie');	
-		var hash=window.location.hash;
-        console.log('length: ',hash.length)
-		if(hash.length!=0){
-			var hashMass=	hash.substring(1).split('s');
-			timeSet=hashMass[1]==serie&&serial==mass.id&&hashMass[0]==season?Cookies.get('time'):0;
-this.serie=hashMass[1];
-this.season=hashMass[0];			
-		}else{
-	if(season!=undefined&&serie!=undefined&&serial==mass.id){  
-this.serie=serie;
-this.season=season;	
-		timeSet=Cookies.get('time');
-	}else{
-this.serie=0;
-this.season=0;
-	
-	}
-	
-	
-	
-		}
-		
-	},
-
     href:'', 
     season:0, 
     serie:0, 
     name:mass.id, 
-    links:mass.links
+    link:mass.link
 		} 
 
 var video={ 
 	
-	get: function (serie,season){
-        console.log('get serie ',serie,' season ',season)
-        return index.links[season][serie]
+	get: function (){
+        var str='';
+var hash=window.location.hash;
+        if(hash.length!=0){
+var hashMass=	hash.substring(1).split('s');
+str='?season='+cifra(hashMass[0])+'&episode='+cifra(hashMass[1]);
+if(mass.id==Cookies.get('serial')&&Cookies.get('season')==hashMass[0]&&Cookies.get('serie')==hashMass[1]) {
+    str=str+'&start_time='+(Cookies.get('time')-10)
+}
+            		
+		}
+        else if(mass.id==Cookies.get('serial')){
+            str='?season='+cifra(Cookies.get('season'))+'&episode='+ cifra(Cookies.get('serie'))+'&start_time='+(Cookies.get('time')-10)
+        }
+        return index.link+str
 },
 	
 	set:function(link){ 
@@ -336,11 +295,6 @@ var video={
 
                     }
 
-$(window).on('unload',function(){
-	Cookies.set('serie',index.serie);
-	Cookies.set('season',index.season);
-    Cookies.set('serial',mass.id);
-})
 		  
 angular.module("seriesApp",[]).controller("seriesCtrl",function($scope,$rootScope){ 
 $scope.mass=mass; 
@@ -360,56 +314,6 @@ $scope.mass=mass;
 	
 });
 $scope.recommendation=recomMass;
-$scope.selectSerieUp=index.serie; 
-$scope.selectSeasonUp=index.season; 
-$scope.changeSeason=0; 
-	
-	
-$scope.changeSerie=function(number){ 
-$scope.changeSeason=number; 
-
-} 
-
- $scope.changeCss=(season)=>{
-	if ( season==$scope.changeSeason ){
-		return "selectLishadow"
-	}  
-     else{
-         return ''
-     }
- }
- $scope.changeGradient=(serie)=>{
-	if ( serie==$scope.selectSerieUp&&$scope.selectSeasonUp==$scope.changeSeason ){
-		return "serieShadow"
-	}  
- }
-$scope.startNewVideo=function(serie,season){ 
-console.log('serie ',serie,' season ',season)
-$scope.selectSerieUp=serie; 
- $scope.selectSeasonUp =season
-index.season=season; 
-index.serie=serie;
-	index.location();
-video.set(video.get(serie,season) )
-} 
-$scope.createSelectSerie=function(mass){ 
-    
-var selectObj={}; 
-    console.log($scope.changeSeason)
-mass.forEach(function(item,i,arr){
-   selectObj[i]=i;
-})
-return selectObj 
-} 
-
-$scope.createSelectSeason=function(mass){ 
-var selectObj={}; 
-   
-mass.forEach(function(item,i,arr){
-    selectObj[i]=i;
-})
-return selectObj 
-} 
 
 }).directive('animate',function (){
 		return function($scope,elem,attrs){
@@ -437,14 +341,9 @@ $scope.recommendation[attrs.animate].left=summ},0)
 			
 			
 	$('#leftButton').on('click',animate(1))
-			
-		
-	
-	
+
 }})
- video.set(video.get(index.serie,index.season) )
-		 index.setSerie() 
-        index.location()
+ video.set(video.get())
 $('div#description').html(mass.text) 
 $("#imgDes").attr('src',mass.info.imgDes) 
 $("#imgMob").attr('src',mass.info.imgMob) 

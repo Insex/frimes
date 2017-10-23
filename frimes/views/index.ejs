@@ -7,12 +7,13 @@
 	<script src="js/js.cookie.js"></script>
 	<script src="js/jquery.fullscreen-min.js"></script>
 <meta name="google-site-verification" content="58RrUpwesv73YR67qBx5PYgzlM_5oncHQ_PjQsVSSpY" />      
-<meta name="yandex-verification" content="6ffa24c23daa30ac" />	
+<meta name="recreativ-verification" content="Co7ZxykSgMTWDwy5imMARcay0LiTtlWZhjXIrooQ" />      
+<meta name="yandex-verification" content="b1cec1ab0f5f0ae3" />
 <META Name="Publisher-Email" Content="600amper@gmail.com">	
 <META Name="revisit-after" Content="2 days">	
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="фильмы смотреть 
-                                  Frimes- это новый онлайн кинотеатр бесплатного пользования. Вам больше не нужно ждать телепремьер или стоять тысячные очереди в кино. 
+Frimes- это новый онлайн кинотеатр бесплатного пользования. Вам больше не нужно ждать телепремьер или стоять тысячные очереди в кино. 
 Теперь, чтобы посмотреть любимую новинку, Вам достаточно совершить несколько кликов и удобно расположиться на диване. 
 На нашем сервисе, Вы можете найти: сотни фильмов, сериалов, комедийных шоу в жанре стендап в хорошем качестве. Большой выбор и разнообразие жанров не оставит никого равнодушным. 
 Каждый сможет найти для себя множество любимых фильмов или, схожих с Вашими вкусами, сериалов. Нет никаких органический, выбирайте, что Вы хотите. 
@@ -28,10 +29,7 @@
 <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter42920644 = new Ya.Metrika({ id:42920644, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true, ut:"noindex", ecommerce:"dataLayer" }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <!-- /Yandex.Metrika counter -->
 	
 	</head>
-	
 
-	
-	
 <body style="background-color:rgb(242,242,242);font-family:roboto;padding:0">
 <h1 style="display:none">
 Смотреть фильмы и сериалы frimes.ru бесплатно
@@ -59,12 +57,13 @@
 			
         </div></a>
         <hr >    
-		<a href="/standup"><div class="  menuText" >
-		<span class="menuSpan">Стендапы</span>
+		<a href="/anime"><div class="  menuText" >
+		<span class="menuSpan">Аниме</span>
 		
         </div>
-        	    
+      	    
             </a>
+            <!--  
             <hr >
 		<a href="/categories"><div class="  menuText" >
 		<span class="menuSpan">Категориям</span>
@@ -76,8 +75,9 @@
                     
 		<span class="menuSpan"><img style="margin-bottom:4.12px;margin-right:1%;" src="img/hot.svg">Новинки</span>
 			
-				
-		</div>  </a> <hr> 
+		</div>  </a> 
+				-->
+            <hr> 
 		</div>
 	</div>
 	
@@ -105,42 +105,24 @@
 						</div>	
 					</div>	
                 </a>    
-             <a href="/films">
+              <a href="/films">
 					<div  class="frameWidth mouse" id="animateDad" >
-						<div class="padding" >
+						<div class="padding">
 							<div class="center">Фильмы</div>
 						</div>
-		<div id="animateBaby" class="animate" >
+						<div id="animateBaby" class="animate" >
 						</div>	
 					</div>
             </a>     
-            <a href="/standup">        
+                <a href="/anime">
 					<div  class="frameWidth mouse" id="animateDad" >
 						<div class="padding">
-							<div class="center">Стендапы</div>
+							<div class="center">Аниме</div>
 						</div>
 						<div id="animateBaby" class="animate" >
 						</div>	
 					</div>
-            </a>    
-            <a href="/categories">         
-							<div  class="frameWidth mouse" id="animateDad" >
-						<div class="padding">
-							<div class="center">Поиск по категориям</div>
-						</div>
-						<div id="animateBaby" class="animate" >
-						</div>	
-					</div>	
-            </a>    
-            <a href="/hot">           
-							<div style="float:right" class="frameWidth mouse" id="animateDad" >
-						<div class="padding" style="height:93%">
-							<div class="center"><img style="margin-bottom:4%" src="img/hot.svg"> Новинки</div>
-						</div>
-						<div id="animateBaby" class="animate" >
-						</div>	
-					</div>	
-            </a>    
+            </a>           
 				</div>			
 			</div>
 		  </div>					
@@ -181,9 +163,10 @@
 				<img alt="{{film.name}}" style="height:100%;width:100%;z-index:1" align="middle" src="{{film.info.imgDes}}">
 								</div>	</a>
 <span class="film" >
-	<a href="/player?series={{film.id}}"><span class="name" >{{film.name}}</span></a>
+	<a href="/player?series={{film.id}}"><p class="name" >{{film.name.toString()}}</p></a>
 	
-	<div class="country" style="">{{film.info.country}}</div>
+	<div class="country"  style=""><span ng-repeat="country in film.info.country">{{country}}
+        {{$last?'':', '}}</span></div>
 	
 		<div class="zhanr" ><span class="letter" ng-click="setGanre($parent.$index,$index)" ng-repeat="ganre in film.info.genres"><span class="animGanre">{{ganre}}</span>{{$last?'':', '}}</span></div>		
 <div style="position:absolute;bottom:0px; width:92%;">
@@ -208,12 +191,11 @@
 		</div>	
 		</div>		
 		<script src="js/frontEnd.js"></script>
-	<script>
-	angular.module("filmApp",[]).controller("filmCtrl",function($scope,$http){ 
+	<script>    
+	angular.module("filmApp",[]).controller("filmCtrl",['$scope', '$sce','$http',function($scope,$sce,$http){ 
+    $scope.sce=$sce;    
 	$scope.filmObject=`<%-body%>`
-    console.log($scope.filmObject.substring(15420))
-        $scope.filmObject=JSON.parse($scope.filmObject);
-						
+        $scope.filmObject=JSON.parse($scope.filmObject);						
 console.log($scope.filmObject)
 $scope.input
 $scope.inputCounter=0;
@@ -223,27 +205,23 @@ $scope.inputMassCounter=0;
        {
        check:false,
        get:function(find){ 
+           console.log(find)
            this.check=true;
-                    console.log('ajax')
-                    console.log(find)
-      
-       
                     $http.post('/ajax',find).success(function (data){
-                        
                         var counter=0;      
            $scope.ajax.check=false;
        $scope.inputMassCounter+=data.length;
 
-                        console.log(data.length)
-                        
+                        console.log(data)           
             $scope.filmObject= $scope.filmObject.concat(data) 
        })},
     getInpFindObj:(input)=>{
       return  JSON.stringify({$or:
-                        [{
-       "info.genres":{$in:[input]}},
-                        {"info.year":input},
-                         {"name":input}
+                [                  
+            {"info.genres":{$in:[input]}},       
+            {"info.country":{$in:[input]}},
+            {"info.year":input},
+            {"name":input}
                         ] })
    }   
    }
@@ -251,13 +229,14 @@ $scope.inputMassCounter=0;
    
        	$(window).on('scroll',function(e){
 
-            if(  window.pageYOffset+screen.height>=$(this).height()&&!$scope.ajax.check){
-         
+if(window.pageYOffset+screen.height>=$(this).height()&&!$scope.ajax.check){
+          console.log('scroll')
                         var find={col:'series'}
                 if($scope.input&&$scope.input!=''){
-                                                 
+                    $scope.inputCounter+=5;
+                        console.log('counter in scroll',$scope.inputCounter); 
                         find.obj=$scope.ajax.getInpFindObj($scope.input);
-                        find.conf={limit:5,skip:$scope.inputCounter+=5}
+                        find.conf={limit:5,skip:$scope.inputCounter}
                     } 
                 else{
                     console.log('else')
@@ -266,29 +245,26 @@ $scope.inputMassCounter=0;
 
                     
                 }
-                console.log('scroll')
-                console.log('skip:'+find.conf.skip)
+               
                  $scope.ajax.get(find)
                 
             }
 
 
     })
-   
+$scope.setCountry=function(pid,id){
+    $scope.input=$scope.filmObject[pid].info.country[id];
+}   
 $scope.setGanre=function(pid,id){
-    console.log($scope.filmObject[pid])
     $scope.input=$scope.filmObject[pid].info.genres[id];
 }
-	}).directive('find',function (){
+	}]).directive('find',function (){
 		return function($scope,elem,attrs){
 	$scope.$watch('input',function(newVal,oldVal){
+        $scope.inputCounter=0;
 var counter=0;
-        console.log(newVal)
      $('.films').each(function(id,elem){
-         
         var text=$(elem).text();
-
-            
 if(new RegExp(newVal,'i').test(text)
     //text.toLowerCase().indexOf(newVal.toLowerCase())!=-1
   ){
@@ -301,21 +277,27 @@ else if (newVal&&newVal!=''){
 			$(elem).css('display','none') 	  	
 		}
   })  
-$scope.inputCounter+=counter
+//$scope.inputCounter+=counter
      if(newVal==''){
     $scope.filmObject.splice(-$scope.inputMassCounter,$scope.inputMassCounter)
     $scope.inputMassCounter=0;
-    $scope.inputCounter=0;     
-         
+    $scope.inputCounter=0;  
+         console.log('zero',counter)
+      counter=0;   
           }
      if(counter<9&&newVal){
-         console.log('counter:'+counter)
          var find={col:'series'};
+         console.log('counter',counter)
         find.obj=$scope.ajax.getInpFindObj(newVal);
-        find.conf={limit:9,skip:counter}
+        find.conf={limit:counter?9-counter:9,skip:counter?counter:0}
+         $scope.inputCounter=4;
          $scope.ajax.get(find)
-         
+         console.log('counter input',$scope.inputCounter)
      }
+        else if(counter>=9){
+             $scope.inputCounter=4;
+            console.log('counter input',$scope.inputCounter)
+        }
 
 })	
     
@@ -323,9 +305,7 @@ $scope.inputCounter+=counter
 }})
 
 
-	
-
-	
-	</script>
+    
+</script>
 	</body>
 </html>

@@ -6,6 +6,8 @@ mongo.connect( "mongodb://localhost:27017/site",function(err,db){
 
 server(db)
 
+	
+
 })
 
 

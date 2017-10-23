@@ -6,7 +6,8 @@
 	<script src="js/mousestop.js"></script>
 	<script src="js/js.cookie.js"></script>
 	<script src="js/jquery.fullscreen-min.js"></script>
-	
+<meta name="google-site-verification" content="58RrUpwesv73YR67qBx5PYgzlM_5oncHQ_PjQsVSSpY" />      
+<meta name="yandex-verification" content="6ffa24c23daa30ac" />	
 <META Name="Publisher-Email" Content="600amper@gmail.com">	
 <META Name="revisit-after" Content="2 days">	
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,7 +47,7 @@
 	
 		<div class="menuScroll">
 
-		<a href="/"><div class="  menuText" style="/*margin-top:10%;*/">
+				<a href="/"><div class="  menuText" style="/*margin-top:10%;*/">
 		<span class="menuSpan">Сериалы</span>
 			
 		</div>
@@ -58,25 +59,12 @@
 			
         </div></a>
         <hr >    
-		<a href="/standup"><div class="  menuText" >
-		<span class="menuSpan">Стендапы</span>
+		<a href="/anime"><div class="  menuText" >
+		<span class="menuSpan">Аниме</span>
 		
         </div>
-        	    
-            </a>
-            <hr >
-		<a href="/categories"><div class="  menuText" >
-		<span class="menuSpan">Категориям</span>
-			
-				
-        </div></a>
-        <hr >    
-        <a href="/hot"><div class="  menuText" >
-                    
-		<span class="menuSpan"><img style="margin-bottom:4.12px;margin-right:1%;" src="img/hot.svg">Новинки</span>
-			
-				
-		</div>  </a> <hr> 
+      	    
+            </a> <hr> 
 		</div>
 	</div>
 	
@@ -95,50 +83,33 @@
 
 				<div class=" head-color" style="vertical-align:top;display:inline-block;padding-right:0px;width:85%;">	
                 <a href="/">
-					<div  class="frameWidth mouse" id="animateDad" >
+            <div  class="frameWidth mouse" id="animateDad" >
 						<div class="padding" >
 							<div class="center">Сериалы</div>
 						</div>
-						<div id="animateBaby" class="animate" >
+		<div id="animateBaby" class="animate" >
 						</div>	
-					</div>	
+					</div>
                 </a>    
              <a href="/films">
 					<div  class="frameWidth mouse" id="animateDad" >
 						<div class="padding" >
 							<div class="center checked">Фильмы</div>
 						</div>
-						<div style="height:7%;background-color:rgb(229, 90, 76);" class="animate checked" >
+                        <div style="height:7%;background-color:rgb(229, 90, 76);" class="animate checked" >
+				
 						</div>	
-					</div>
+					</div>	
             </a>     
-            <a href="/standup">        
+                <a href="/anime">
 					<div  class="frameWidth mouse" id="animateDad" >
 						<div class="padding">
-							<div class="center">Стендапы</div>
+							<div class="center">Аниме</div>
 						</div>
 						<div id="animateBaby" class="animate" >
 						</div>	
 					</div>
-            </a>    
-            <a href="/categories">         
-							<div  class="frameWidth mouse" id="animateDad" >
-						<div class="padding">
-							<div class="center">Поиск по категориям</div>
-						</div>
-						<div id="animateBaby" class="animate" >
-						</div>	
-					</div>	
-            </a>    
-            <a href="/hot">           
-							<div style="float:right" class="frameWidth mouse" id="animateDad" >
-						<div class="padding" style="height:93%">
-							<div class="center"><img style="margin-bottom:4%" src="img/hot.svg"> Новинки</div>
-						</div>
-						<div id="animateBaby" class="animate" >
-						</div>	
-					</div>	
-            </a>    
+            </a>        
 				</div>			
 			</div>
 		  </div>					
@@ -176,24 +147,26 @@
 				<svg id="button" viewBox="0 0 86 100" class="svg" >
  				<polygon  points="0,0 0,100 86,50"/>
 				</svg>
-				<img alt="{{film.name}}" style="height:100%;width:100%;z-index:1" align="middle" src="{{film.img}}">
+				<img alt="{{film.name}}" style="height:100%;width:100%;z-index:1" align="middle" src="{{film.info.imgDes}}">
 								</div>	</a>
 <span class="film" >
-	<a href="/player?films={{film.name}}"><span class="name" >{{film.name}}</span></a>
+    <a href="/player?films={{film.name}}"><span class="name" ng-bind-html="sce.trustAsHtml(film.name)" ></span></a>
 	
+	<div class="country"  style=""><span ng-click="setCountry($parent.$index,$index)" ng-repeat="country in film.info.country">{{country}}
+        {{$last?'':', '}}</span></div>
 	
-	
-		<div class="zhanr" ><span class="letter" ng-click="setGanre($parent.$index,$index)" ng-repeat="ganre in film.genre"><span class="animGanre">{{ganre}}</span>{{$last?'':', '}}</span></div>		
-
-			
+		<div class="zhanr" ><span class="letter" ng-click="setGanre($parent.$index,$index)" ng-repeat="ganre in film.info.genres"><span class="animGanre">{{ganre}}</span>{{$last?'':', '}}</span></div>		
 <div style="position:absolute;bottom:0px; width:92%;">
-
+	<span style="text-align:left">
+<img src="img/star.svg" style="height:15px;vertical-align:top;margin-right:2px;">
+		{{film.info.criticm}}</span>
+			
+		
 		</div>	
-
 	
 	</span>
-
-<span style="float:left;margin-right:10%;margin-top:150px;margin-left:14px;">{{film.year}}</span>
+<span style="float:right;margin-top:150px" class="ng-binding">{{film.info.year}}</span>  
+<!--<span style="float:left;margin-right:10%;margin-top:150px;margin-left:14px;"></span>-->
 	</div>
     <div style="width:100%;height:50px;" >
     
@@ -206,11 +179,10 @@
 		</div>		
 		<script src="js/frontEnd.js"></script>
 	<script>
-	angular.module("filmApp",[]).controller("filmCtrl",function($scope,$http){ 
-	$scope.filmObject=JSON.parse('<%-body%>'
-);
-
-							
+	angular.module("filmApp",[]).controller("filmCtrl",['$scope', '$sce','$http',function($scope,$sce,$http){ 
+    $scope.sce=$sce;    
+	$scope.filmObject=`<%-body%>`
+        $scope.filmObject=JSON.parse($scope.filmObject);						
 console.log($scope.filmObject)
 $scope.input
 $scope.inputCounter=0;
@@ -220,27 +192,23 @@ $scope.inputMassCounter=0;
        {
        check:false,
        get:function(find){ 
+           console.log(find)
            this.check=true;
-                    console.log('ajax')
-                    console.log(find)
-      
-       
                     $http.post('/ajax',find).success(function (data){
-                        
                         var counter=0;      
            $scope.ajax.check=false;
        $scope.inputMassCounter+=data.length;
 
-                        console.log(data.length)
-                        
+                        console.log(data)           
             $scope.filmObject= $scope.filmObject.concat(data) 
        })},
     getInpFindObj:(input)=>{
       return  JSON.stringify({$or:
-                        [{
-       genre:{$in:[input]}},
-                        {year:input},
-                         {name:input}
+                [                  
+            {"info.genres":{$in:[input]}},       
+            {"info.country":{$in:[input]}},
+            {"info.year":input},
+            {"name":input}
                         ] })
    }   
    }
@@ -248,13 +216,14 @@ $scope.inputMassCounter=0;
    
        	$(window).on('scroll',function(e){
 
-            if(  window.pageYOffset+screen.height>=$(this).height()&&!$scope.ajax.check){
-         
+if(window.pageYOffset+screen.height>=$(this).height()&&!$scope.ajax.check){
+          console.log('scroll')
                         var find={col:'films'}
                 if($scope.input&&$scope.input!=''){
-                                                 
+                    $scope.inputCounter+=5;
+                        console.log('counter in scroll',$scope.inputCounter); 
                         find.obj=$scope.ajax.getInpFindObj($scope.input);
-                        find.conf={limit:5,skip:$scope.inputCounter+=5}
+                        find.conf={limit:5,skip:$scope.inputCounter}
                     } 
                 else{
                     console.log('else')
@@ -263,32 +232,26 @@ $scope.inputMassCounter=0;
 
                     
                 }
-                console.log('scroll')
-                console.log('skip:'+find.conf.skip)
+               
                  $scope.ajax.get(find)
                 
             }
 
-            
 
-
-
-        
     })
-   
+$scope.setCountry=function(pid,id){
+    $scope.input=$scope.filmObject[pid].info.country[id];
+}   
 $scope.setGanre=function(pid,id){
-    $scope.input=$scope.filmObject[pid].genre[id];
+    $scope.input=$scope.filmObject[pid].info.genres[id];
 }
-	}).directive('find',function (){
+	}]).directive('find',function (){
 		return function($scope,elem,attrs){
 	$scope.$watch('input',function(newVal,oldVal){
+        $scope.inputCounter=0;
 var counter=0;
-        console.log(newVal)
      $('.films').each(function(id,elem){
-         
         var text=$(elem).text();
-
-            
 if(new RegExp(newVal,'i').test(text)
     //text.toLowerCase().indexOf(newVal.toLowerCase())!=-1
   ){
@@ -301,26 +264,33 @@ else if (newVal&&newVal!=''){
 			$(elem).css('display','none') 	  	
 		}
   })  
-$scope.inputCounter+=counter
+//$scope.inputCounter+=counter
      if(newVal==''){
     $scope.filmObject.splice(-$scope.inputMassCounter,$scope.inputMassCounter)
     $scope.inputMassCounter=0;
-    $scope.inputCounter=0;     
-         
+    $scope.inputCounter=0;  
+         console.log('zero',counter)
+      counter=0;   
           }
      if(counter<9&&newVal){
-         console.log('counter:'+counter)
          var find={col:'films'};
+         console.log('counter',counter)
         find.obj=$scope.ajax.getInpFindObj(newVal);
-        find.conf={limit:9,skip:counter}
+        find.conf={limit:counter?9-counter:9,skip:counter?counter:0}
+         $scope.inputCounter=4;
          $scope.ajax.get(find)
-         
+         console.log('counter input',$scope.inputCounter)
      }
+        else if(counter>=9){
+             $scope.inputCounter=4;
+            console.log('counter input',$scope.inputCounter)
+        }
 
 })	
     
 
 }})
+
 
 
 	

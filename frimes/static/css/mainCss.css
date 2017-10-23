@@ -683,6 +683,7 @@ font-size:12px;
 }
 
 .country {
+    cursor: pointer;
 	white-space: normal;
 	margin-top:0.9vw;
 	display: block;

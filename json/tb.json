@@ -4,12 +4,12 @@
  		"id": "sv",
  		"name": "Светлячок",
  		"info": {
-            "country":"США",
+            "country":["США"],
  			"year": 2002,
  			"imgDes": "img/sv.jpg",
  			"imgMob": "img/svm.jpg",
  			"seasonduration": 0,
- 			"genres": ["фантастика","комедия"],
+ 			"genres": ["Фантастика","Комедии","Вестерны"],
 
  			"criticm": 8.6
  		},
@@ -36,12 +36,12 @@
  		"id": "bm",
  		"name": "Черное зеркало",
  		"info": {
-            "country":"Великобритания",
+            "country":["Великобритания"],
  			"year": 2011,
  			"imgDes": "img/bm.jpg",
  			"imgMob": "img/bmm.jpg",
  			"seasonduration": 0,
- 			"genres": ["фантастика","драма"],
+ 			"genres": ["Фантастика","Драмы"],
 
  			"criticm": 8.4
  		},
@@ -85,12 +85,12 @@
  		"id": "gt",
  		"name": "Готэм",
  		"info": {
-            "country":"США",
+            "country":["США"],
  			"year": 2014,
  			"imgDes": "img/gt.jpg",
  			"imgMob": "img/gtm.jpg",
 
- 			"genres": ["фантастика","детектив"],
+ 			"genres": ["Фантастика","Детективы"],
 
  			"criticm": 7.7
  		},
@@ -133,12 +133,12 @@
  		"id": "vk",
  		"name": "Викинги",
  		"info": {
-            "country":"Канада",
+            "country":["Канада"],
  			"year": 2013,
  			"imgDes": "img/vk.jpg",
  			"imgMob": "img/vkm.jpg",
  			"seasonduration": 0,
- 			"genres": ["драма"],
+ 			"genres": ["Драмы","Исторические"],
 
  			"criticm": 8.2
  		},
@@ -185,12 +185,12 @@
  		"id": "sd",
  		"name": "Кремниевая долина",
  		"info": {
-            "country":"США",
+            "country":["США"],
  			"year": 2014,
  			"imgDes": "img/sd.jpg",
  			"imgMob": "img/sdm.jpg",
  			"seasonduration": 0,
- 			"genres": ["комедия"],
+ 			"genres": ["Комедии"],
 
  			"criticm": "8.0"
  		},
@@ -251,12 +251,12 @@
  		"id": "nd",
  		"name": "Настоящий детектив",
  		"info": {
-            "country":"США",
+            "country":["США"],
  			"year": 2014,
  			"imgDes": "img/nd.jpg",
  			"imgMob": "img/ndm.jpg",
  			"seasonduration": 0,
- 			"genres": ["триллер","детектив","драма"],
+ 			"genres": ["Триллеры","Детективы","Драмы"],
 
  			"criticm": 8.7
  		},
@@ -290,12 +290,12 @@
  		"id": "fg",
  		"name": "Фарго",
  		"info": {
-            "country":"США",
+            "country":["США"],
  			"year": 2014,
  			"imgDes": "img/fg.jpg",
  			"imgMob": "img/fgm.jpg",
  			"seasonduration": 0,
- 			"genres": ["триллер","драма"],
+ 			"genres": ["Триллеры","Драмы"],
 
  			"criticm": 8.4
  		},
@@ -343,11 +343,11 @@
  		"id": "sh",
  		"name": "Шерлок",
  		"info": {
-            "country":"Великобритания",
+            "country":["Великобритания"],
  			"year": 2010,
  			"imgDes": "img/sh.jpg",
  			"imgMob": "img/shm.jpg",
- 			"genres": ["триллер","драма","детектив"],
+ 			"genres": ["Триллеры","Драмы","Детективы"],
 
  			"criticm": 8.8
  		},
@@ -401,11 +401,11 @@
  		"id": "nk",
  		"name": "Нарко",
  		"info": {
-            "country":"США",
+            "country":["США"],
  			"year": 2015,
  			"imgDes": "img/nk.jpg",
  			"imgMob": "img/nkm.jpg",
- 			"genres": ["драма"],
+ 			"genres": ["Драмы","Криминал"],
 
  			"criticm": 8.4
  		},
