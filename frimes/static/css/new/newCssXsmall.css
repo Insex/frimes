@@ -1,0 +1,49 @@
+@media (max-width:768px) {
+	
+    .new {
+        width: 92%;
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .newHeader>div {
+        margin-left: 0px;
+        display: inline-block;
+    }
+
+    .inpStyle {
+        position: static;
+        margin-top: 15px;
+        width: 100%;
+        height: 30px;
+        border-radius: 0px;
+    }
+
+    .divForFilms {
+        margin-left: 4vw;
+        margin-right: 4vw;
+        color: rgba(102, 102, 102, 0.8);
+    }
+
+    .newsBlock>div {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: -moz-calc(100% - 40px);
+        width: calc(100% - 40px);
+        display: inline-block;
+        text-align: center;
+    }
+
+    .newsBlock {
+        width: 100%;
+    }
+
+    .news {
+        max-width: 250px;
+    }
+
+    .news>img {
+        height: 51.1vw;
+        min-height: 373px;
+    }
+}

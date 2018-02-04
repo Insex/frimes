@@ -1,0 +1,16 @@
+@media (min-width:1200px) {
+
+    .imgSize {
+        width: 22%;
+        margin-right: 3.6%;
+    }
+
+    .content {
+        padding-left: 12.5%;
+        padding-right: 12.5%;
+    }
+
+    .button {
+        padding-top: 20%;
+    }
+}

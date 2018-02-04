@@ -1,0 +1,82 @@
+<!DOCTYPE>
+<html lang="ru" style="overflow-y:scroll">
+
+<head>
+
+    <script src="js/jquery-3.0.0.min.js"></script>
+
+</head>
+
+<body>
+    <div id="admin">
+        <input type="password" id="login" placeholder="Логин">
+        <br>
+        <input type="password" id="pass" placeholder="Пароль">
+        <br>
+        <input id="col" placeholder="Имя коллекции films,cartoons,anime,series">
+        <br>
+        <input id="name" placeholder="Имя">
+        <br>
+        <input id="id" placeholder="Id">
+        <br>
+        <input id="desc" placeholder="Описание">
+        <br>
+        <input id="year" placeholder="Год">
+        <br>
+        <input id="reiting" placeholder="Рейтинг">
+        <br>
+        <input id="ganres" placeholder="Жанры">
+        <br>
+        <input id="country" placeholder="Страны">
+        <br>
+        <input id="imgDes" placeholder="Картинка">
+        <br>
+        <input id="link" placeholder="Сылка мунволк">
+        <br>
+        <button>Добавить</button>
+        <div id="res"></div>
+    </div>
+    <script>
+        function delQoutes(str) {
+            str = str.replace(/"/g, '&#34');
+            str = str.replace(/'/g, '&#39');
+            return str
+        }
+        $('button').on('click', function() {
+            var obj = {
+                login: {
+                    login: $('#login').val(),
+                    passw: $('#pass').val(),
+                    col: $('#col').val(),
+                },
+
+                obj: {
+                    name: delQoutes($('#name').val()),
+                    id: delQoutes($('#id').val()),
+                    text: delQoutes($('#desc').val()),
+                    date: new Date().toString(),
+                    link: $('#link').val(),
+                        year: $('#year').val() - 0,
+                        raiting: $('#reiting').val(),
+                        genres: $('#ganres').val().split(","),
+                        country: $('#country').val().split(","),
+                        imgDes: $('#imgDes').val()
+
+                }
+
+            }
+            console.log(obj)
+            $.post('/addFilm_ajax', {
+                ajax: JSON.stringify(obj)
+            }, function(data) {
+                console.log(data)
+                $('#res').html(data.res)
+            })
+            $('input').val('')
+
+        })
+    </script>
+
+</body>
+
+</html>

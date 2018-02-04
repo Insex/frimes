@@ -1,0 +1,39 @@
+body{
+    background-color:rgb(207, 99, 71);
+}
+
+.content {
+    width:100vw;
+    z-index:3;
+}
+.content>img{
+    position:absolute;
+    width:100%;
+    z-index:1;
+}
+.textBlock{
+padding-top:4vw;
+position:relative;
+z-index:10;
+color:white;
+text-align: center;
+}
+
+.notButton {
+    z-index: 1;
+    margin-top:20px;
+	cursor:pointer;
+	display:inline-block;
+	box-shadow: 0px 6px 23.49px 3.51px rgba(0, 0, 0, 0.35);
+	border-radius:100px;
+	text-align: center;
+	width:220px;
+	color:#EF8743;
+	background-color:white;
+	padding-right:20px;
+	padding-left:20px;
+	font-size: 15px;
+	padding-top:10px;
+	padding-bottom:11px;
+	transition:	box-shadow 0.5s ease-out 0s;
+}

@@ -1,0 +1,211 @@
+@import url("newCssLarge.css");
+
+@import url("newCssSmall.css");
+
+@import url("newCssXsmall.css");
+
+@import url("newCssSm-Lg.css");
+
+@import url("newCssSm-Md.css");
+
+@import url("newCssMd-Lg.css");
+
+@import url("newCssXs-Sm.css");
+
+@import url("newCssMedium.css");
+
+.content {
+    width: 100%;
+    z-index: 3;
+}
+
+.back {
+    margin-top: 0px;
+    text-align: center;
+}
+
+.films {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    background-color: white;
+    padding: 10px;
+    font-size: 12px;
+    -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.inp {
+    -webkit-transition: box-shadow 0.4s ease-out 0s;
+    -webkit-transition: -webkit-box-shadow 0.4s ease-out 0s;
+    transition: -webkit-box-shadow 0.4s ease-out 0s;
+    -moz-transition: box-shadow 0.4s ease-out 0s;
+    -o-transition: box-shadow 0.4s ease-out 0s;
+    transition: box-shadow 0.4s ease-out 0s;
+    transition: box-shadow 0.4s ease-out 0s, -webkit-box-shadow 0.4s ease-out 0s;
+    border: 0px;
+    background-image: url(../../img/loupe.svg);
+    background-repeat: no-repeat;
+    background-position: 97.6% 49%;
+    padding: 0px;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 40px;
+    padding-bottom: 0.15%;
+    font-family: roboto;
+    font-size: 14px;
+}
+
+#recommendation {
+    z-index: 2;
+}
+
+.movieImg {
+    height: 100%;
+    width: 100%;
+    z-index: 1
+}
+
+.reiting {
+    position: absolute;
+    bottom: 0px;
+    width: 92%;
+}
+
+.reitingStar {
+    height: 15px;
+    vertical-align: top;
+    margin-right: 2px;
+}
+
+.reitingYear {
+    float: right;
+    margin-top: 150px;
+}
+
+.filmsMargin {
+    margin-top: 15px;
+    height: 185px;
+}
+
+.name {
+    word-break: break-word;
+    display: block;
+    white-space: normal;
+    vertical-align: top;
+    font-size: 16.5px;
+    color: #484444;
+    margin: 0px;
+}
+
+.new {
+    position: absolute;
+    top: 24vw;
+    padding-bottom: 15px;
+}
+
+.newsBlock {
+    float: left;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #e8e8e8;
+    border-style: solid;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 8px 16.74px 1.26px rgba(17, 17, 17, 0.05);
+            box-shadow: 0px 8px 16.74px 1.26px rgba(17, 17, 17, 0.05);
+}
+
+.newsBlock>div {
+    float: left;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 0px;
+}
+
+.newHeader>div {
+    border-radius: 4px;
+    background: -moz-linear-gradient(right, #ff4e55 0%, #ff9654 100%);
+    background: -webkit-gradient(linear, right top, left top, from(#ff4e55), to(#ff9654));
+    background: -o-linear-gradient(right, #ff4e55 0%, #ff9654 100%);
+    background: linear-gradient(-90deg, #ff4e55 0%, #ff9654 100%);
+    width: 200px;
+    height: 45px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 45px;
+    text-align: center;
+}
+
+.backGround {
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    height: 26.44vw;
+    background-image: url(../../img/background.jpg);
+}
+
+.news>img {
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: #ffffff;
+    -webkit-box-shadow: 2px 5px 14px -4px rgba(7, 7, 7, 0.4);
+            box-shadow: 2px 5px 14px -4px rgba(7, 7, 7, 0.4);
+    width: 100%;
+}
+
+.news:before {
+    width: 0px;
+}
+
+.news {
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-top: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+    vertical-align: text-top;
+}
+
+.newsName {
+    width: 100%;
+    cursor: pointer;
+    display: inline-block;
+    color: #666666;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+    margin-top: 17px;
+}
+
+.newsGanre>span>span {
+    text-decoration: underline;
+}
+
+.newsGanre>span {
+    cursor: pointer;
+    margin-top: 7px;
+    color: #e55a4c;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+    -webkit-transition: color 0.4s ease-out 0s;
+    -moz-transition: color 0.4s ease-out 0s;
+    -o-transition: color 0.4s ease-out 0s;
+    transition: color 0.4s ease-out 0s;
+}
+
+.newsGanre>span>span:hover {
+    text-decoration: none;
+}
+
+.newsGanre {
+    text-align: left;
+}

@@ -1,0 +1,11 @@
+@media (max-width:1200px) {
+
+    video::-webkit-media-controls-panel {
+        width: auto;
+        height: auto;
+    }
+
+    .mobile {
+        display: none
+    }
+}

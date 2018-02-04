@@ -1,0 +1,10 @@
+@media (min-width:768px) {
+    
+    .hiddenSm-Lg {
+        display: none;
+    }
+
+    .head {
+        height: 60px;
+    }
+}

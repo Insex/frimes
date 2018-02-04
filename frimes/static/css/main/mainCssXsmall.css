@@ -1,0 +1,28 @@
+@media (max-width:767px) {
+    .hidden-xs {
+        display: none;
+    }
+
+    .lgSm {
+        padding-left: 4vw;
+        padding-right: 4vw;
+        display: block;
+    }
+
+    .notMargin {
+        padding-top: 3vw;
+    }
+
+    .filmsMargin {
+        width: 100%;
+        margin-right: 0%;
+    }
+
+    .head {
+        height: 50px;
+    }
+
+    .button {
+        display: none;
+    }
+}

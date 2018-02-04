@@ -1,0 +1,30 @@
+            <div class="fullScreen" id="fullScreen">
+                <iframe allowfullscreen="" controls id="iframe" v-bind:src="frimes.playing.iframe_url?(frimes.playing.iframe_url+'?nocontrols=1&season='+cifra(frimes.season)+'&episode='+cifra(frimes.serie)+'&start_time='+(frimes.time?frimes.time:0)):''"></iframe>
+            </div>
+            <div id="select" class=" block ">
+                <div class="movieInfo translations" v-bind:class="{noTrans:noTrans()}">
+                    <span class="">
+                    <div>Озвучка от:</div>
+                </span>
+                    <div v-on:click="change.translation(translat.translation)" v-bind:class="active(translat.translation,'translation')" v-for="translat in movie.links">
+                        {{translat.translation}}
+                    </div>
+                </div>
+                <div class="movieInfo">
+                    <span class=" margin">
+                    <div>Сезоны:</div>
+                </span>
+                    <div v-on:click="change.season(season.season_number)" v-bind:class="active(season.season_number,'season')" v-for="season in frimes.playing.seasons">
+                        {{season.season_number}} сезон
+                    </div>
+                </div>
+                <div class="movieInfo">
+                    <span class="margin">
+                    <div>Серии:</div>
+                </span>
+
+                    <div v-on:click="change.serie(serie)" v-bind:class="active(serie,'serie')" v-for="serie in getEpisodes(frimes.playing.seasons,frimes.season)">
+                        {{serie}} серия
+                    </div>
+                </div>
+            </div>

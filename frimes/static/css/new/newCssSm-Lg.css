@@ -1,0 +1,27 @@
+@media (min-width:768px) {
+  
+        
+    .new {
+        width: 100%;
+    }
+
+    .newHeader>div {
+        margin-left: 7.5px;
+    }
+
+    .inpStyle {
+        position: absolute;
+        top: -moz-calc((100% - 43px) / 2 );
+        top: calc((100% - 43px) / 2 );
+        left: -moz-calc((100% - 616px) / 2 );
+        left: calc((100% - 616px) / 2 );
+        width: 616px;
+        height: 43px;
+        border-radius: 5px;
+    }
+
+    .divForFilms {
+        padding-left: 1.8%;
+        color: rgba(102, 102, 102, 0.8);
+    }
+}

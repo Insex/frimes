@@ -1,354 +1,182 @@
 <!DOCTYPE>
-<html lang="ru" ng-app="seriesApp" ng-controller="seriesCtrl"  >
-  <head>
-      <script src="js/jquery-3.0.0.min.js"></script>
-<script src="js/angular.min.js"></script>
-	<script src="js/mousestop.js"></script>
-	<script src="js/js.cookie.js"></script>
-	<script src="js/jquery.fullscreen-min.js"></script>
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta property="og:title" content="<%-name%>" />
- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-		 
-    <title>Смотреть сериал <%-name%></title>
-<meta name="Keywords" content="смотреть,сериал,<%-name%>,бесплатно,без рекламы,frimes.ru,frimes">    
-	  <meta charset="utf-8">
-      <meta name="description" content="<%-description%> "> 
-	  <link href="css/mainCss.css" rel="stylesheet"> 
- <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<style>
-	  </style>
-<script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter42920644 = new Ya.Metrika({ id:42920644, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true, ut:"noindex", ecommerce:"dataLayer" }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> 
-	
-	  
-	
-	</head>
-	
+<html lang="ru" >
 
-	
-	
-<body style="background-color:#F2F2F2;font-family:roboto;padding:0">
-<div style="display:none">
-<h1>Смотреть бесплатно <%-name%></h1>    
-<h2><%-year%></h2>    
-    </div>      
-<div class="menuBlock touch"></div>
-	<div  id="menu"  class="menu visible-xs hidden-sm hidden-md hidden-lg">
-	
-		<div class="menuScroll">
+<head>
+    <script src="js/js.cookie.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js">
+    </script>
+    <script src="js/frontEnd.js"></script>
+    <script src="js/href.js"></script>
+    <script src="js/player_<%-type%>.js"></script>
+    <script src="js/player.js"></script>
+    <meta name="description" content="<%-description%> ">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="<%-name%>" />
+    <meta name="Keywords" content="смотреть,<%-title%>,<%-name%>,бесплатно,без рекламы,frimes.ru,frimes">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href="css/main/mainCss.css" rel="stylesheet">
+    <link href="css/player/player.css" rel="stylesheet">
+    <title>Смотреть
+        <%-type%>
+        <%-title%>
+            <%-name%>
+    </title>
+    <script type="text/javascript">
+        (function(d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter42920644 = new Ya.Metrika({
+                        id: 42920644,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true,
+                        webvisor: true,
+                        trackHash: true,
+                        ut: "noindex",
+                        ecommerce: "dataLayer"
+                    });
+                } catch (e) {}
+            });
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function() {
+                    n.parentNode.insertBefore(s, n);
+                };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else {
+                f();
+            }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+</head>
 
-				<a href="/"><div class="  menuText" style="/*margin-top:10%;*/">
-		<span class="menuSpan">Сериалы</span>
-			
-		</div>
-            
-        </a>
-            <hr >
-		<a href="/films"><div class="  menuText" >
-		<span class="menuSpan">Фильмы</span>
-			
-        </div></a>
-        <hr >    
-		<a href="/anime"><div class="  menuText" >
-		<span class="menuSpan">Аниме</span>
-		
+<body>
+    <div class="none">
+        <h1>Смотреть бесплатно
+            <%-name%>
+        </h1>
+        <h2>
+            <%-year%>
+        </h2>
+    </div>
+    <div>
+        <%- include('../static/html/mobileHeader.html'); %>
+            <div class="hidden-xs  head">
+
+                <div class="lgMd hidden-xs">
+                    <a href="/">
+                        <div class="center logo-lg">
+                            <span>Frimes</span>
+                        </div>
+                    </a>
+                    <div class="head-color">
+                        <my-header :active="''" :value="header" v-for="header in headers"></my-header>
+                        <my-header-new :active="''"></my-header-new>
+                    </div>
+                    
+                </div>
+            </div>
+    </div>
+    <div class="content margin">
+        <div id="movie" v-cloak>
+            <% if (type=='films') { %>
+                <%- include('../static/html/films.html'); %>
+            <% } else{ %>  
+                <%- include('../static/html/series.html'); %>
+            <% } %>
+            <div id="description" class="margin info block ">
+                <div id="descriptionName" class="descriptionName descNameSm ">
+                    {{movie.name}}
+                </div>
+                <diV class="centerImg descImgSm">
+                    <img id="imgDes" v-bind:src="movie.imgDes">
+                </diV>
+                <div class="description descImgSm">
+                    <div id="descriptionName" class="descriptionName descNameLg">
+                        {{movie.name}}
+                    </div>
+                    <div class="movieProps">
+                        <span class="movieProp">Жанры:</span>
+                        <span class="movieProp" v-for="(genre,index) in movie.genres">
+                                <span class="ganreProp" v-url="'/<%-collection%>#'+genre">{{genre}}</span> {{index==movie.genres.length-1?'':', '}}
+                        </span>
+                    </div>
+                    <div class="movieProps">
+                        <span class="movieProp">Страны:</span>
+                        <span v-for="(country,index) in movie.country">
+                                {{country}}
+                                {{index==movie.country.length-1?'':', '}}
+                            </span>
+                    </div>
+                    <div class="movieProps">
+                        <span class="movieProp">Рейтинг:</span>
+                        <span class="ratingProp">
+                                {{movie.rating}}
+                            </span> /10
+
+                    </div>
+                    <div class="movieProps">
+                        <span class="movieProp">Год:</span>
+                        <span>
+                                {{movie.year}}
+                                
+                            </span>
+                    </div>
+                </div>
+                <div class="descriptionText">{{movie.text}}</div>
+            </div>
         </div>
-      	    
-            </a> <hr> 
-		</div>
-	</div>
-	
- <div class="container-fluid"  >
-	
-	<div class="row">
-		<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs  head" style="padding:0px;width:100%;">
-			<div class="lgMd col-lg-10 col-lg-offset-1 col-sm-12  col-md-10  col-md-offset-1  hidden-xs" style="white-space:nowrap;height:100%;padding-left:4vw;height:100%;padding-right:4vw" >
-			
-	
-					<a href="/">	<div class="  center logo-lg" style="display:inline-block;width:15%;"> 
-							Frimes
-                        </div></a>
-
-				<div class=" head-color" style="position:relative;height:100%;vertical-align:top;display:inline-block;padding-right:0px;width:85%;">	
-
-                <a href="/">
-					<div  class="frameWidth mouse" id="animateDad" >
-						<div class="padding" >
-							<div class="center">Сериалы</div>
-						</div>
-						<div id="animateBaby" class="animate" >
-						</div>	
-					</div>	
-                </a>      
-
-                <a href="/films">
-					<div  class="frameWidth mouse" id="animateDad" >
-						<div class="padding" >
-							<div class="center">Фильмы</div>
-						</div>
-						<div id="animateBaby" class="animate" >
-						</div>	
-					</div>	
-                </a>    
-    
-            <a href="/anime">        
-					<div  class="frameWidth mouse" id="animateDad" >
-						<div class="padding" >
-							<div class="center">Аниме</div>
-						</div>
-						<div id="animateBaby" class="animate" >
-						</div>	
-					</div>
-            </a>  
-				</div>			
-			</div>
-		  </div>					
-			
-			<span style="padding-left:4vw;padding-right:4vw" class="touch col-xs-12 head hidden-lg hidden-md hidden-sm ">
-			<div style="height:100%;text-align: center;" class="logo-sm" >
-			
-						<a href="/"><span style="display:inline-block;vertical-align:middle;">Frimes</span></a>
-						
-				</div>
-			<img id="buttonOut" class=" height-sm-xs " src="img/menu.svg " >
-			</span>
-				
-			
-	 	
-	 </div> 
-	 <div  class="row">
-		<div style="padding-left:4vw;height:auto;padding-right:4vw" class="col-lg-10 col-lg-offset-1 col-sm-12 col-md-10 col-md-offset-1 col-xs-12">
-			<div style="">
-                
-<div class="fullScreen margin" style="position:relative;width:100%" id="fullScreen">
-   
-	<iframe allowfullscreen=""  controls style="background-color:black;width:100%;vertical-align:middle;display:inline-block" id="iframe" src="" >
-			
-			
-	</iframe>
-
-			</div></div>
-
-			<div class="margin" style="padding-bottom:2.1%;display:table;width:100%;background-color:white;width:100%;">
-					
-						
-						<div id="descriptionName" class="descriptionName descriptMargin" style=""></div>	
-						
-						<img id="imgDes" src="" style="" class="centerImg">
-						<!--<img id="imgDes" src="" style="margin-right:3%;margin-top:2.1%;float:left;padding-left:2%;padding-right:0px;" class="centerImg">
-
-						<img id="imgMob" src="" style="margin-bottom:2%;width:100%;padding-right:3%;padding-left:3%;" class=" visible-xs ">-->
-						
-						
-						
-			 			<div id="description" class="description" style="">
-				
-		
-						</div>
-		
-
-					
-		    </div>
-		
-			<div class="margin col-lg-12 col-md-12  col-xs-12 col-sm-12 lastBlock blockHeight" style="">
-				
-				
-					<div id="leftButton" style="" class="button col-lg-1  col-sm-1 col-md-1  col-xs-1 mouse " >
-				<img  src="img/leftArrow.svg" style="width:40%;margin-left:25%;">
-				</div>
-					<div style="height:auto;margin-bottom:1vw; "class="col-lg-10  col-sm-10 col-md-10  col-xs-12">
-						<div style="cursor:default;width:100%;font-size:24px;color:#e55a4c;padding:2%" class="center">Рекомендуем для просмотра</div>
-						
-						
-						<div class="scroll imgFrames" id="scroll" style="">
-							<div style="position:relative;">
-						<div id="imgFrame" class="imgSize repeat"  ng-repeat="frame in recommendation" style="left:{{($index*procent)+'%'}}" animate="{{$index}}" >
-                            <a href="/player?series={{frame.id}}">
-							<div style="width:100%" class="">
-								<div id="playButton" class="playButton" style="text-align:center;position:relative;">
-									<div id="recommendation" style="z-index:2">
-									</div>
-									<svg id="button" viewBox="0 0 86 100" class="svg" >
- 									<polygon  points="0,0 0,100 86,50"/>
-									</svg>
-									<img class="botImg" style="width:100%;z-index:1" align="middle" src="{{frame.info.imgDes}}">
-								</div>	
-							</div>
-							<div style="" class="bot-text" >{{frame.name}}</div>	
-						</a>
-					
-						</div>
-
-					 </div>
-					</div>		
-					</div>
-				<div id="rightButton"  class="button col-lg-1 mouse  col-sm-1 col-md-1  col-xs-1" >
-				
-				<img  src="img/rightArrow.svg"  style="margin-left:20%;width:40%">
-				
-				</div>
-			</div>	
-
-
-			
-	  	</div>
-		<div class=" col-xs-12 col-md-12 col-sm-12 col-lg-12 footer" >
-         <div class="colorFooter" ><span >Frimes.ru</span> - все ваши любимые фильмы и сериалы здесь</div>
-<div  class="margin col-xs-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-offset-1 col-xs-10 col-md-10 col-sm-10 col-lg-10">
-<h5>
-Frimes- это новый онлайн кинотеатр бесплатного пользования. Вам больше не нужно ждать телепремьер или стоять тысячные очереди в кино. 
-Теперь, чтобы посмотреть любимую новинку, Вам достаточно совершить несколько кликов и удобно расположиться на диване. 
-На нашем сервисе, Вы можете найти: сотни фильмов, сериалов, комедийных шоу в жанре стендап в хорошем качестве. Большой выбор и разнообразие жанров не оставит никого равнодушным. 
-Каждый сможет найти для себя множество любимых фильмов или, схожих с Вашими вкусами, сериалов. Нет никаких органический, выбирайте, что Вы хотите. 
-Провести тёплый семейный вечер за просмотром отличного кино? Посмотреть все сезоны сериала в режиме марафона с друзьями? Всё это, и многое другое, вам поможет осуществить Frimes. 
-Наш дизайн и техническая начинка- полностью авторская разработка. Поэтому, у нас Вы не найдёте назойливой рекламы или платных показов, а наш простой и удобный интерфейс не предоставит вам неудобств.
-            </h5>
-            </div>            
-         </div>
-	  </div> 
- </div>
-
-	
-    
-
-		<script src="js/frontEnd.js"></script>
-
-	  <script>
-		'use strict'
-	window.checkFullScreen=false;
- var recomMass=	JSON.parse('<%-frame%>');
-var check=true;
-var mass='<%-body%>' 
-var timeSet;
-                           
-  function onPlayerTimeUpdate (time) {
-$(window).on('unload',function(){
-    Cookies.set('time',time)
-})
-  }
-function cifra(num){
-          if(Number(num<10)){return '0'+num}  
-          else{return num}
-          }
-function loc (season,serie){
-		window.location.hash=season+'s'+serie;
-}
-
-    function onPlayerEpisodeSelected(episode) {
-    loc(episode.season,episode.episode)    
-    Cookies.set('serial',mass.id);   
-	Cookies.set('serie',episode.episode);
-	Cookies.set('season',episode.season);
-    Cookies.set('translator',episode.translator);
-  }
-          
-  function mwPlayerMessageReceive(event) {
-    if (event.data && event.data.message == 'MW_PLAYER_TIME_UPDATE') {
-      onPlayerTimeUpdate(event.data.value);
-    }
-if (event.data && event.data.message == 'MW_PLAYER_SELECT_EPISODE') {
-      onPlayerEpisodeSelected(event.data.value);
-    }
-  }
-     
-          
-  $(function() {
-    if (window.addEventListener) {
-      window.addEventListener('message', mwPlayerMessageReceive);
-    } else {
-      window.attachEvent('onmessage', mwPlayerMessageReceive);
-    }
-  });
-                  
-mass=JSON.parse(mass) 
-console.log('mass',mass)
-var index={ 
-    href:'', 
-    season:0, 
-    serie:0, 
-    name:mass.id, 
-    link:mass.link
-		} 
-
-var video={ 
-	
-	get: function (){
-        var str='';
-var hash=window.location.hash;
-        if(hash.length!=0){
-var hashMass=	hash.substring(1).split('s');
-str='?season='+cifra(hashMass[0])+'&episode='+cifra(hashMass[1]);
-if(mass.id==Cookies.get('serial')&&Cookies.get('season')==hashMass[0]&&Cookies.get('serie')==hashMass[1]) {
-    str=str+'&start_time='+(Cookies.get('time')-10)
-}
-            		
-		}
-        else if(mass.id==Cookies.get('serial')){
-            str='?season='+cifra(Cookies.get('season'))+'&episode='+ cifra(Cookies.get('serie'))+'&start_time='+(Cookies.get('time')-10)
-        }
-        return index.link+str
-},
-	
-	set:function(link){ 
-		          $('#iframe').attr('src',link) 
-                      }, 
-
-                    }
-
-		  
-angular.module("seriesApp",[]).controller("seriesCtrl",function($scope,$rootScope){ 
-$scope.mass=mass; 
-	
-	$scope.procent=25.6;
-	recomMass.forEach(function(item,i,arr){
-		if(i==0){
-		item.limitation=0
-			
-		}
-				else if(i==arr.length-1){
-		item.limitation=+(3*$scope.procent).toFixed(3)	
-
-		}
-    item.left=+(i*$scope.procent).toFixed(3);
-	
-	
-});
-$scope.recommendation=recomMass;
-
-}).directive('animate',function (){
-		return function($scope,elem,attrs){
-		
-			function animate(sign){
-				return function(){
-		var summ=+($scope.recommendation[attrs.animate].left+(sign*$scope.procent)).toFixed(3);
-		$scope.$apply(function(){		
-		if($scope.recommendation[0].left==$scope.recommendation[0].limitation&&sign==1){
-		return}
-						
-if($scope.recommendation[$scope.recommendation.length-1].left==$scope.recommendation[$scope.recommendation.length-1].limitation&&sign==-1)
-		{return}
-						
-setTimeout(function(){$(elem).animate({left:summ+'%'},{duration:500,easeing:"easein"})
-$scope.recommendation[attrs.animate].left=summ},0)
-
-					})
-				}
-				
-			}
-				
-			$scope.recommendation[attrs.animate];
-			$('#rightButton').on('click',animate(-1))
-			
-			
-	$('#leftButton').on('click',animate(1))
-
-}})
- video.set(video.get())
-$('div#description').html(mass.text) 
-$("#imgDes").attr('src',mass.info.imgDes) 
-$("#imgMob").attr('src',mass.info.imgMob) 
-$(".descriptionName").html(mass.name)  
-	  </script>
-
+        <div class="margin lastBlock block " v-cloak>
+            <div id="leftButton" class="left leftButton button  mouse ">
+                <img @click="framesBack" src="img/leftArrow.svg">
+            </div>
+            <div class="left recommendation">
+                <div class="center recommendTitle">Рекомендуем для просмотра</div>
+                <div class="scroll imgFrames" id="scroll">
+                    <div>
+                        <div id="imgFrame" v-animate="obj.animPos" v-for="obj in frames" class="imgSize repeat">
+                                <div v-url="'/player?<%-collection%>='+obj.frame.name">
+                                    <div id="playButton" class="playButton">
+                                        <div id="recommendation" style="z-index:2">
+                                        </div>
+                                        <svg id="button" viewBox="0 0 86 100" class="svg">
+ 									          <polygon  points="0,0 0,100 86,50"/>
+									       </svg>
+                                        <img class="botImg" align="middle" v-bind:src="obj.frame.imgDes">
+                                    </div>
+                                </div>
+                                <div class="bot-text">{{obj.frame.name}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="rightButton" class="button left mouse  ">
+                <img @click="framesForward" src="img/rightArrow.svg">
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="colorFooter">
+            <span>Frimes.ru</span> - все ваши любимые фильмы и сериалы здесь
+        </div>
+        <h5>
+            Frimes- это новый онлайн кинотеатр бесплатного пользования. Вам больше не нужно ждать телепремьер или стоять тысячные очереди в кино. Теперь, чтобы посмотреть любимую новинку, Вам достаточно совершить несколько кликов и удобно расположиться на диване.
+            На нашем сервисе, Вы можете найти: сотни фильмов, сериалов, комедийных шоу в жанре стендап в хорошем качестве. Большой выбор и разнообразие жанров не оставит никого равнодушным. Каждый сможет найти для себя множество любимых фильмов или, схожих
+            с Вашими вкусами, сериалов. Нет никаких органический, выбирайте, что Вы хотите. Провести тёплый семейный вечер за просмотром отличного кино? Посмотреть все сезоны сериала в режиме марафона с друзьями? Всё это, и многое другое, вам поможет
+            осуществить Frimes. Наш дизайн и техническая начинка- полностью авторская разработка. Поэтому, у нас Вы не найдёте назойливой рекламы или платных показов, а наш простой и удобный интерфейс не предоставит вам неудобств.
+        </h5>
+    </div>
+    <script>
+        createHeader();
+        createPlayer(JSON.parse('<%-body%>'));
+        reccomend(JSON.parse('<%-frame%>'))
+    </script>
 </body>
+
 </html>

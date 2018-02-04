@@ -1,0 +1,10 @@
+@media (min-width:768px ) and (max-width:992px) {
+   
+    .news {
+        width: 22.5%;
+    }
+
+    .news>img {
+        height: 28.2vw;
+    }
+}

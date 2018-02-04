@@ -1,0 +1,170 @@
+@import url("dataCssLarge.css");
+
+@import url("dataCssSmall.css");
+
+@import url("dataCssXsmall.css");
+
+@import url("dataCssSm-Lg.css");
+
+@import url("dataCssSm-Md.css");
+
+@import url("dataCssMd-Lg.css");
+
+@import url("dataCssXs-Sm.css");
+
+@import url("dataCssMedium.css");
+
+.content {
+    width: 100%;
+    z-index: 3;
+}
+
+.back {
+    margin-top: 0px;
+    text-align: center;
+}
+
+.films {
+    border-radius: 3px;
+    -webkit-box-shadow: 2px 5px 14px -4px rgba(7, 7, 7, 0.1);
+            box-shadow: 2px 5px 14px -4px rgba(7, 7, 7, 0.1);
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    background-color: white;
+    padding: 10px;
+    font-size: 12px;
+    -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.film {
+    font-weight: 500;
+    left: 120px;
+    word-break: break-word;
+    width: auto;
+    height: 165px;
+    padding-left: 14px;
+    padding-right: 7px;
+    float: right;
+    position: absolute;
+}
+
+.letter:first-letter {
+    text-transform: uppercase;
+}
+
+.letter:first-letter {
+    text-transform: uppercase;
+}
+
+.animGanre {
+    color: #e55a4c;
+    text-decoration: underline;
+    cursor: pointer;
+    -webkit-transition: color 0.4s ease-out 0s;
+    -moz-transition: color 0.4s ease-out 0s;
+    -o-transition: color 0.4s ease-out 0s;
+    transition: color 0.4s ease-out 0s;
+}
+
+.animGanre:hover {
+    text-decoration: none;
+}
+
+.notPlayButton {
+    height: 100%;
+    text-align: center;
+    position: relative;
+    width: 110px;
+    float: left;
+}
+
+.zhanr {
+    white-space: normal;
+    margin-top: 0.5vw;
+    display: block;
+    vertical-align: top;
+    font-size: 12px;
+}
+
+.country {
+    cursor: pointer;
+    white-space: normal;
+    margin-top: 0.9vw;
+    display: block;
+    vertical-align: top;
+    font-size: 12px;
+    color: rgba(102, 102, 102, 0.8);
+}
+
+.inp {
+    -webkit-transition: box-shadow 0.4s ease-out 0s;
+    -webkit-transition: -webkit-box-shadow 0.4s ease-out 0s;
+    transition: -webkit-box-shadow 0.4s ease-out 0s;
+    -moz-transition: box-shadow 0.4s ease-out 0s;
+    -o-transition: box-shadow 0.4s ease-out 0s;
+    transition: box-shadow 0.4s ease-out 0s;
+    transition: box-shadow 0.4s ease-out 0s, -webkit-box-shadow 0.4s ease-out 0s;
+    border: 0px;
+    background-image: url(../../img/loupe.svg);
+    background-repeat: no-repeat;
+    background-position: 97.6% 49%;
+    padding: 0px;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 40px;
+    font-family: roboto;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#recommendation {
+    z-index: 2;
+}
+
+.movieImg {
+    height: 100%;
+    width: 100%;
+    z-index: 1
+}
+
+.reiting {
+    position: absolute;
+    bottom: 0px;
+    width: 92%;
+}
+
+.reitingStar {
+    height: 15px;
+    vertical-align: top;
+    margin-right: 2px;
+}
+
+.reitingYear {
+    float: right;
+    margin-top: 150px;
+}
+
+.filmsMargin {
+    margin-top: 15px;
+    height: 185px;
+}
+
+.name {
+    cursor: pointer;
+    word-break: break-word;
+    display: block;
+    white-space: normal;
+    vertical-align: top;
+    font-size: 16.5px;
+    color: #484444;
+    margin: 0px;
+}
+
+.nothingFound {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 500;
+}

@@ -1,0 +1,22 @@
+@media (min-width:1200px) {
+    
+    .filmsMargin {
+        width: 31.2%;
+        margin-right: 2.13%;
+    }
+
+    .news>img {
+        height: 18.5vw;
+    }
+
+    .newsBlock {
+        margin-left: 12.5%;
+        width: 75%;
+    }
+
+    .newsBlock>div {
+        padding-left: 3.7%;
+        padding-right: 3.7%;
+        width: 92.6%;
+    }
+}

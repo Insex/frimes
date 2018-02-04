@@ -1,0 +1,48 @@
+<div id="header">
+    <div  id="menu" :class="{activeBurger:activeBurger}" class="menu hiddenSm-Lg">
+	
+		<div class="menuScroll">
+
+		<a href="/">
+            <div class="  menuText" >
+		      <span class="menuSpan">Сериалы</span>
+		    </div>
+        </a>
+        <hr >
+		<a href="/films">
+            <div class="  menuText" >
+		      <span class="menuSpan">Фильмы</span>
+			</div>
+        </a>
+        <hr >    
+		<a href="/cartoons">
+            <div class="  menuText" >
+                <span class="menuSpan">Мультфильмы</span>
+		    </div>
+        </a>
+        <hr >    
+		<a href="/anime">
+            <div class="  menuText" >
+                <span class="menuSpan">Аниме</span>
+		    </div>
+        </a>
+         <hr>     
+        <a href="/new">
+            <div class=" menuText">
+                <span class="menuSpan"><img src="img/hot.svg"> Новинки</span>
+            </div>
+        </a>    
+       
+		</div>
+        
+	</div>		
+    <div class="menuBlock touch" @click="burger"></div>
+    <span class="lgSm touch head hiddenSm-Lg ">
+        <div class="logo-sm" >
+			<a href="/">
+                <span>Frimes</span>
+            </a>
+        </div>
+        <img id="buttonOut" @click="burger" class=" height-sm-xs " src="img/menu.svg " >
+    </span>
+</div>        

@@ -1,0 +1,20 @@
+@media (min-width:768px ) and (max-width:1200px) {
+    
+    .filmsMargin {
+        width: 47.8%;
+        margin-right: 2.13%;
+    }
+
+    .lgMd {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .head {
+        height: 60px;
+    }
+
+    .hot {
+        margin-right: 16.28%;
+    }
+}

@@ -1,0 +1,24 @@
+@media (max-width:768px) {
+	
+    .backGround {
+        margin-left: 4vw;
+        margin-right: 4vw;
+        height: auto;
+        background-image: none;
+        background-color: rgb(242,242,242);
+    }
+
+    .inpStyle {
+        position: static;
+        margin-top: 15px;
+        width: 100%;
+        height: 30px;
+        border-radius: 0px;
+    }
+
+    .divForFilms {
+        margin-left: 4vw;
+        margin-right: 4vw;
+        color: rgba(102, 102, 102, 0.8);
+    }
+}
