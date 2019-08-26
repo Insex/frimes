@@ -38,7 +38,7 @@ function getData (dataBase,collection){
         if(window.pageYOffset+screen.height>=//если высота прокрутки+высота экрана >= чем все высота страницы, кароч если если прокрутка внизу странцы, загрузи ещё фильмов 
         document.documentElement.scrollHeight
         && films.scrollCheck){
-                films.scrollCheck=false;  // чек в фолсе, чтобы не было лишних запрос пока объекты приходят
+                films.scrollCheck=false;  // чек в false, чтобы не было лишних запрос пока объекты приходят
                 find.set(input.input,films.movies.length)// шаблонизируем объект значением инпута/ и говорим сколько объектов нужно поставить в параметр skip
                 find.get((res)=>{// колбек который вызывается при приходе фильмов
                             console.log('res',res)
@@ -89,13 +89,6 @@ function getData (dataBase,collection){
             }
         })
         input.input=decodeURI(window.location.hash.substring(1));    
-        /*var scroll = new Vue({
-            el:'body',
-            methods:{
-                scroll:()=>{
-                    console.log('scroll')
-                }
-            }
-        })*/
+
 
 }
